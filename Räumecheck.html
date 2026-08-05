@@ -5,35 +5,37 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
 <meta name="theme-color" content="#f6f6f8">
 <title>Räumecheck – Ausstattungskontrolle</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0yIC0yIDE0NSAxMjYiPjxwb2x5Z29uIGZpbGw9IiNmY2MwMTAiIHBvaW50cz0iMzUuMiwtMC4xIC0wLjMsNjEuMyAzNS4yLDEyMi42IDEwNiwxMjIuNiAxNDEuNSw2MS4zIDEwNiwtMC4xIi8+PHBhdGggZmlsbD0iIzIzMjMyMyIgZD0iTTgwLjksODMuNUg2MC40Yy0xLjYsMC0zLjEtMC45LTMuOS0yLjNMNDYuMiw2My41Yy0wLjgtMS40LTAuOC0zLjEsMC00LjVsMTAuMi0xNy43YzAuOC0xLjQsMi4zLTIuMywzLjktMi4zaDIwLjVjMS42LDAsMy4xLDAuOSwzLjksMi4zTDk1LDU5YzAuOCwxLjQsMC44LDMuMSwwLDQuNUw4NC44LDgxLjNDODQsODIuNyw4Mi41LDgzLjUsODAuOSw4My41eiBNNjMsNzQuNWgxNS4zbDcuNi0xMy4yTDc4LjMsNDhINjNsLTcuNiwxMy4yTDYzLDc0LjV6Ii8+PHBhdGggZmlsbD0iIzIzMjMyMyIgZD0iTTMzLjQsODguMWMtMS42LDAtMy4xLTAuOC0zLjktMi4zTDE2LjYsNjMuNWMtMC44LTEuNC0wLjgtMy4xLDAtNC41bDI1LjEtNDMuNWMwLjgtMS40LDIuMy0yLjMsMy45LTIuM2g0Ny44YzIuNSwwLDQuNSwyLDQuNSw0LjVzLTIsNC41LTQuNSw0LjVINDguMWwtMjIuNSwzOWwxMS42LDIwLjFjMS4yLDIuMiwwLjUsNC45LTEuNyw2LjFDMzQuOSw4Ny45LDM0LjEsODguMSwzMy40LDg4LjF6Ii8+PHBhdGggZmlsbD0iIzIzMjMyMyIgZD0iTTk1LjcsMTA5LjFINDcuOWMtMi41LDAtNC41LTItNC41LTQuNXMyLTQuNSw0LjUtNC41aDQ1LjJsMjIuNS0zOC45bC0xMS40LTE5LjdjLTEuMi0yLjItMC41LTQuOSwxLjYtNi4xYzIuMi0xLjIsNC45LTAuNSw2LjEsMS42bDEyLjcsMjJjMC44LDEuNCwwLjgsMy4xLDAsNC41bC0yNS4xLDQzLjRDOTguOCwxMDguMyw5Ny4zLDEwOS4xLDk1LjcsMTA5LjF6Ii8+PC9zdmc+">
 <style>
 /* ---------- Design tokens ---------- */
 :root{
-  --bg:#eeeee9;
+  --bg:#f2f2f2;
   --surface:#ffffff;
-  --surface-2:#e6e6df;
-  --surface-3:#dadad0;
-  --border:#c7c7ba;
-  --border-strong:#a3a396;
-  --text:#1a1a15;
-  --text-muted:#5c5c50;
-  --text-faint:#8c8c7c;
-  --primary:#c2410c;
-  --primary-hover:#9a3409;
-  --primary-soft:#fae3d3;
-  --primary-contrast:#ffffff;
+  --surface-2:#ececec;
+  --surface-3:#e0e0e0;
+  --border:#d2d2d2;
+  --border-strong:#adadad;
+  --text:#2e2e2e;
+  --text-muted:#5c5c5c;
+  --text-faint:#8f8f8f;
+  --primary:#fcc010;
+  --primary-hover:#e2ab00;
+  --primary-soft:#fdf1cf;
+  --primary-contrast:#252525;
   --success:#166534;
   --success-soft:#dde9dd;
   --danger:#b91c1c;
   --danger-soft:#f3dcdc;
   --danger-hover:#8c1515;
-  --warn:#8a5a05;
-  --warn-soft:#f0e2c4;
-  --radius:0px;
-  --radius-lg:2px;
-  --shadow-sm:2px 2px 0 rgba(20,20,10,.09);
-  --shadow:3px 3px 0 rgba(20,20,10,.15);
-  --shadow-lg:4px 4px 0 rgba(20,20,10,.28);
-  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --warn:#b45309;
+  --warn-soft:#f5e4cf;
+  --radius-sm:8px;
+  --radius:12px;
+  --radius-lg:18px;
+  --shadow-sm:0 1px 3px rgba(20,20,20,.07), 0 1px 2px rgba(20,20,20,.05);
+  --shadow:0 6px 18px rgba(20,20,20,.10), 0 2px 5px rgba(20,20,20,.06);
+  --shadow-lg:0 16px 40px rgba(20,20,20,.18), 0 4px 12px rgba(20,20,20,.08);
+  --font:"Segoe UI",Arial,Tahoma,-apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif;
   --font-mono:ui-monospace,"Cascadia Mono","Segoe UI Mono","SFMono-Regular",Consolas,"Liberation Mono",monospace;
   --ease:cubic-bezier(.4,0,.2,1);
   --ease-out:cubic-bezier(.16,1,.3,1);
@@ -41,19 +43,19 @@
 }
 @media (prefers-color-scheme:dark){
   :root{
-    --bg:#121210;
-    --surface:#1b1b17;
-    --surface-2:#242420;
-    --surface-3:#2e2e27;
-    --border:#3d3d34;
-    --border-strong:#545446;
-    --text:#f1f0e8;
-    --text-muted:#b0afa1;
-    --text-faint:#7d7c6e;
-    --primary:#ef7b3c;
-    --primary-hover:#ff9256;
-    --primary-soft:#3a2414;
-    --primary-contrast:#171208;
+    --bg:#1c1c1c;
+    --surface:#262626;
+    --surface-2:#2f2f2f;
+    --surface-3:#393939;
+    --border:#434343;
+    --border-strong:#5a5a5a;
+    --text:#f2f2f2;
+    --text-muted:#b0b0b0;
+    --text-faint:#7d7d7d;
+    --primary:#fcc010;
+    --primary-hover:#ffd23d;
+    --primary-soft:#3a2f0d;
+    --primary-contrast:#1c1c1c;
     --success:#4ade80;
     --success-soft:#132a1c;
     --danger:#f47171;
@@ -61,9 +63,9 @@
     --danger-hover:#ff9c9c;
     --warn:#dcac4c;
     --warn-soft:#332508;
-    --shadow-sm:2px 2px 0 rgba(0,0,0,.4);
-    --shadow:3px 3px 0 rgba(0,0,0,.5);
-    --shadow-lg:4px 4px 0 rgba(0,0,0,.6);
+    --shadow-sm:0 1px 3px rgba(0,0,0,.35), 0 1px 2px rgba(0,0,0,.25);
+    --shadow:0 6px 18px rgba(0,0,0,.4), 0 2px 5px rgba(0,0,0,.3);
+    --shadow-lg:0 16px 40px rgba(0,0,0,.5), 0 4px 12px rgba(0,0,0,.35);
     color-scheme:dark;
   }
 }
@@ -99,34 +101,41 @@ input,textarea,select{font-family:inherit}
 }
 .app-bar__brand{display:flex;align-items:center;gap:8px;flex:1;min-width:0;overflow:hidden}
 .app-bar__floor-label{font-size:9.5px;font-weight:700;letter-spacing:.08em;color:var(--text-faint);flex:none}
-.app-bar__sub{font-size:12px;color:var(--text-muted);font-family:var(--font-mono);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
-.app-bar__actions{display:flex;gap:8px;flex:none}
+.app-bar__sub{font-size:11.5px;color:var(--text-muted);font-family:var(--font-mono);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;flex:1}
+.app-bar__actions{display:flex;gap:6px;flex:none}
 
-.floor-tabs{display:flex;gap:4px;flex:none}
 .floor-tab{
-  width:28px;height:28px;flex:none;display:flex;align-items:center;justify-content:center;
-  font-family:var(--font-mono);font-weight:700;font-size:12.5px;
-  border:1.5px solid var(--border-strong);background:var(--surface);color:var(--text-muted);cursor:pointer;
+  width:36px;height:36px;flex:none;display:flex;align-items:center;justify-content:center;
+  border-radius:var(--radius-sm);
+  font-family:var(--font-mono);font-weight:700;font-size:13px;
+  border:1.5px solid var(--border-strong);background:var(--surface);color:var(--text);cursor:default;
+}
+
+.floor-picker{display:flex;gap:8px;margin-bottom:22px}
+.floor-picker-btn{
+  flex:1;min-height:58px;border-radius:var(--radius);border:1.5px solid var(--border-strong);
+  background:var(--surface-2);cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;
+  font-family:var(--font-mono);font-weight:800;font-size:18px;color:var(--text);
   transition:all .12s var(--ease);-webkit-tap-highlight-color:transparent;
 }
-button.floor-tab:active{transform:translate(1px,1px)}
-.floor-tab.is-active{background:var(--text);border-color:var(--text);color:var(--bg)}
-.floor-tab.is-static{background:var(--surface-3);border-color:var(--border-strong);color:var(--text);cursor:default;font-weight:700}
+.floor-picker-btn:active{transform:scale(.97)}
+.floor-picker-btn__label{font-family:var(--font);font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-faint)}
+.floor-picker-btn.is-active{background:var(--primary);border-color:var(--primary);color:var(--primary-contrast)}
+.floor-picker-btn.is-active .floor-picker-btn__label{color:var(--primary-contrast);opacity:.75}
 
 main{flex:1;display:flex;flex-direction:column;padding:16px 16px calc(env(safe-area-inset-bottom,0px) + 28px);max-width:720px;margin:0 auto;width:100%}
 
 /* ---------- Buttons ---------- */
 .btn{
-  appearance:none;border:1.5px solid var(--text);cursor:pointer;
+  appearance:none;border:1.5px solid var(--border-strong);cursor:pointer;
   display:inline-flex;align-items:center;justify-content:center;gap:7px;
-  font-size:13.5px;font-weight:700;letter-spacing:.01em;
+  font-size:14px;font-weight:600;letter-spacing:0;
   padding:11px 16px;border-radius:var(--radius);
   min-height:44px;
-  transition:transform .1s var(--ease), background-color .15s var(--ease), border-color .15s var(--ease), color .15s var(--ease);
+  transition:transform .12s var(--ease), background-color .15s var(--ease), border-color .15s var(--ease), color .15s var(--ease), box-shadow .15s var(--ease);
   -webkit-tap-highlight-color:transparent;
-  white-space:nowrap;
 }
-.btn:active{transform:translate(1px,1px)}
+.btn:active{transform:scale(.96)}
 .btn[disabled]{opacity:.4;cursor:not-allowed;pointer-events:none}
 
 .btn-primary{background:var(--primary);color:var(--primary-contrast);border-color:var(--primary)}
@@ -139,7 +148,7 @@ main{flex:1;display:flex;flex-direction:column;padding:16px 16px calc(env(safe-a
 .btn-danger:hover{background:var(--danger);color:#fff;border-color:var(--danger)}
 .btn-danger-solid{background:var(--danger);color:#fff;border-color:var(--danger)}
 .btn-danger-solid:hover{background:var(--danger-hover);border-color:var(--danger-hover)}
-.btn-icon{padding:9px;min-width:40px;min-height:40px}
+.btn-icon{padding:8px;min-width:36px;min-height:36px;border-radius:var(--radius-sm)}
 .btn-block{width:100%}
 .btn-lg{min-height:52px;font-size:14.5px;padding:13px 20px}
 
@@ -150,14 +159,20 @@ main{flex:1;display:flex;flex-direction:column;padding:16px 16px calc(env(safe-a
 .card{background:var(--surface);border:1.5px solid var(--border-strong);border-radius:var(--radius);box-shadow:var(--shadow-sm)}
 .card-pad{padding:18px}
 
-.page-title{font-size:19px;font-weight:800;letter-spacing:.01em;margin-bottom:4px;text-transform:uppercase}
-.page-sub{font-size:13px;color:var(--text-muted);margin-bottom:18px;line-height:1.5;font-family:var(--font-mono)}
+.brand-header{display:flex;justify-content:center;padding:8px 0 28px}
+.brand-logo{height:28px;width:auto;display:block}
+.brand-logo path{fill:var(--text)}
+.brand-logo .st0{fill:var(--primary)}
+
+.page-title{font-size:21px;font-weight:800;letter-spacing:-.01em;margin-bottom:4px;position:relative;padding-left:14px}
+.page-title::before{content:"";position:absolute;left:0;top:3px;bottom:3px;width:4px;border-radius:99px;background:var(--primary)}
+.page-sub{font-size:13.5px;color:var(--text-muted);margin-bottom:18px;line-height:1.5;font-family:var(--font-mono)}
 .section-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-faint);margin:0 0 10px 2px;font-family:var(--font-mono)}
 
 /* ---------- Fields ---------- */
 .field{margin-bottom:16px}
 .field-label{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:7px;padding:0 1px}
-.field-label__text{font-size:12.5px;font-weight:700;color:var(--text);letter-spacing:.03em;text-transform:uppercase}
+.field-label__text{font-size:13.5px;font-weight:700;color:var(--text);letter-spacing:0}
 .field-label__hint{font-size:11px;color:var(--text-faint);font-family:var(--font-mono)}
 .input,.textarea{
   width:100%;background:var(--surface-2);border:1.5px solid var(--border-strong);
@@ -173,11 +188,11 @@ main{flex:1;display:flex;flex-direction:column;padding:16px 16px calc(env(safe-a
 .toggle-group{display:flex;gap:8px}
 .toggle-btn{
   flex:1;min-height:52px;border-radius:var(--radius);border:1.5px solid var(--border-strong);
-  background:var(--surface-2);font-weight:700;font-size:13.5px;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;
+  background:var(--surface-2);font-weight:700;font-size:15px;letter-spacing:0;cursor:pointer;
   display:flex;align-items:center;justify-content:center;gap:8px;color:var(--text-muted);
   transition:all .15s var(--ease);-webkit-tap-highlight-color:transparent;
 }
-.toggle-btn:active{transform:translate(1px,1px)}
+.toggle-btn:active{transform:scale(.97)}
 .toggle-btn.is-yes.is-selected{background:var(--success);border-color:var(--success);color:#fff}
 .toggle-btn.is-no.is-selected{background:var(--surface);border-color:var(--text);color:var(--text)}
 
@@ -193,18 +208,18 @@ main{flex:1;display:flex;flex-direction:column;padding:16px 16px calc(env(safe-a
   border-radius:var(--radius);padding:12px 12px;cursor:pointer;text-align:left;width:100%;
   transition:all .12s var(--ease);-webkit-tap-highlight-color:transparent;
 }
-.room-row:active{transform:translate(1px,1px)}
+.room-row:active{transform:scale(.97)}
 .room-row.is-selected{border-color:var(--primary);background:var(--primary-soft);box-shadow:inset 0 0 0 1.5px var(--primary)}
 .room-row__id{font-weight:700;font-size:14px;min-width:76px;font-family:var(--font-mono)}
 .room-row__nick{font-size:13px;color:var(--text-muted);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.room-row__count{font-size:11px;font-weight:700;color:var(--text);background:var(--surface-3);padding:3px 8px;flex:none;font-family:var(--font-mono)}
+.room-row__count{font-size:11px;font-weight:700;color:var(--text);background:var(--surface-3);padding:3px 9px;border-radius:99px;flex:none;font-family:var(--font-mono)}
 .room-row__edit{flex:none;color:var(--text-faint);padding:6px;background:transparent;border:none;cursor:pointer}
 .room-row__edit:hover{background:var(--surface-3);color:var(--text)}
 .nick-input{flex:1;min-width:0;border:1.5px solid var(--primary);border-radius:var(--radius);padding:6px 8px;font-size:13px;background:var(--surface)}
 
 .field-num{display:flex;align-items:center;gap:10px}
 .stepper-btn{width:44px;height:44px;border-radius:var(--radius);border:1.5px solid var(--border-strong);background:var(--surface-2);font-size:20px;font-weight:700;cursor:pointer;flex:none;color:var(--text)}
-.stepper-btn:active{transform:translate(1px,1px)}
+.stepper-btn:active{transform:scale(.97)}
 .field-num .input{text-align:center;font-weight:700;font-size:17px}
 
 /* ---------- Wizard ---------- */
@@ -217,10 +232,10 @@ main{flex:1;display:flex;flex-direction:column;padding:16px 16px calc(env(safe-a
   transition:all .12s var(--ease);
 }
 .progress-dot.is-done{background:var(--text);border-color:var(--text);color:var(--bg)}
-.progress-dot.is-current{background:var(--primary);border-color:var(--primary);color:#fff}
+.progress-dot.is-current{background:var(--primary);border-color:var(--primary);color:var(--primary-contrast)}
 
 .wizard-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:2px}
-.wizard-room-chip{font-size:12px;font-weight:700;color:var(--text);background:var(--surface-3);padding:5px 10px;font-family:var(--font-mono)}
+.wizard-room-chip{font-size:12px;font-weight:700;color:var(--text);background:var(--surface-3);padding:5px 11px;border-radius:99px;font-family:var(--font-mono)}
 .wizard-count{font-size:12.5px;color:var(--text-muted);font-weight:700;font-family:var(--font-mono)}
 
 .wizard-footer{display:flex;gap:10px;margin-top:6px;position:sticky;bottom:calc(env(safe-area-inset-bottom,0px) + 12px)}
@@ -231,7 +246,7 @@ main{flex:1;display:flex;flex-direction:column;padding:16px 16px calc(env(safe-a
 .entry-card__top{display:flex;align-items:center;justify-content:space-between;margin-bottom:9px}
 .entry-card__title{display:flex;align-items:center;gap:8px}
 .entry-card__title strong{font-size:15px;font-weight:800;font-family:var(--font-mono)}
-.status-pill{font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:3px 8px;border:1.5px solid transparent}
+.status-pill{font-size:10.5px;font-weight:700;letter-spacing:.03em;padding:3px 9px;border-radius:99px;border:1.5px solid transparent}
 .status-pill.yes{background:var(--success);color:#fff}
 .status-pill.no{background:transparent;color:var(--text-muted);border-color:var(--border-strong)}
 .entry-card__actions{display:flex;gap:6px}
@@ -251,7 +266,7 @@ main{flex:1;display:flex;flex-direction:column;padding:16px 16px calc(env(safe-a
 .stat-tile__num{font-size:22px;font-weight:800;letter-spacing:-.01em;font-variant-numeric:tabular-nums;font-family:var(--font-mono)}
 .stat-tile__label{font-size:10px;color:var(--text-muted);font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-top:3px}
 
-.ratio-bar{height:8px;border-radius:0;background:var(--surface-3);overflow:hidden;display:flex;margin-top:8px;border:1px solid var(--border-strong)}
+.ratio-bar{height:8px;border-radius:99px;background:var(--surface-3);overflow:hidden;display:flex;margin-top:8px;border:1px solid var(--border-strong)}
 .ratio-bar__yes{background:var(--success);height:100%;transition:width .4s var(--ease-out)}
 .ratio-legend{display:flex;justify-content:space-between;font-size:12px;color:var(--text-muted);margin-top:6px;font-weight:700;font-family:var(--font-mono)}
 
@@ -261,7 +276,7 @@ main{flex:1;display:flex;flex-direction:column;padding:16px 16px calc(env(safe-a
   padding:11px 10px;cursor:pointer;text-align:left;transition:all .12s var(--ease);
   display:flex;flex-direction:column;gap:5px;min-height:74px;
 }
-.room-tile:active{transform:translate(1px,1px)}
+.room-tile:active{transform:scale(.97)}
 .room-tile.has-data{border-color:var(--text);border-left:3px solid var(--primary)}
 .room-tile__id{font-size:13px;font-weight:800;font-family:var(--font-mono)}
 .room-tile__nick{font-size:10.5px;color:var(--text-muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -300,14 +315,14 @@ main{flex:1;display:flex;flex-direction:column;padding:16px 16px calc(env(safe-a
 @keyframes overlayIn{from{opacity:0}to{opacity:1}}
 .modal{
   background:var(--surface);width:100%;max-width:560px;max-height:92vh;overflow-y:auto;
-  border-radius:0;padding:22px 18px calc(env(safe-area-inset-bottom,0px) + 20px);
+  border-radius:var(--radius-lg) var(--radius-lg) 0 0;padding:22px 18px calc(env(safe-area-inset-bottom,0px) + 20px);
   box-shadow:var(--shadow-lg);animation:modalIn .22s var(--ease-out);
-  border:1.5px solid var(--text);border-bottom:none;
+  border:1.5px solid var(--border-strong);border-bottom:none;
 }
-@media (min-width:600px){.modal{border-bottom:1.5px solid var(--text)}}
+@media (min-width:600px){.modal{border-radius:var(--radius-lg);border-bottom:1.5px solid var(--border-strong)}}
 @keyframes modalIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 .modal__handle{width:36px;height:4px;background:var(--border-strong);margin:0 auto 16px}
-.modal__title{font-size:15px;font-weight:800;margin-bottom:4px;text-transform:uppercase;letter-spacing:.02em;display:flex;align-items:center;gap:8px}
+.modal__title{font-size:17px;font-weight:800;margin-bottom:4px;letter-spacing:-.005em;display:flex;align-items:center;gap:8px}
 .modal__body{font-size:13.5px;color:var(--text-muted);line-height:1.55;margin-bottom:18px}
 .modal__actions{display:flex;gap:10px}
 .modal__actions .btn{flex:1}
@@ -376,10 +391,10 @@ var o=[];var l=Array.isArray(e);for(f=n.s.c;f<=n.e.c;++f)s[f]=ya(f);for(var c=n.
 /* ================= Konstanten ================= */
 var STORAGE_KEY = "raumcheck_data_v1";
 var MAP_KEY_PREFIX = "raumcheck_map_";
-var FLOORS = ["1","2","3","4","5"];
+var FLOORS = ["M","1","2","4"];
 function roomIdsForFloor(floor){ var a=[]; for(var i=1;i<=35;i++) a.push("E16."+floor+"."+i); return a; }
 var ALL_ROOM_IDS = FLOORS.reduce(function(acc,f){ return acc.concat(roomIdsForFloor(f)); },[]);
-function floorOfRoomId(id){ var m=/^E16\.(\d+)\./.exec(id); return m ? m[1] : FLOORS[0]; }
+function floorOfRoomId(id){ var m=/^E16\.([^.]+)\./.exec(id); return m ? m[1] : FLOORS[0]; }
 
 var FIELD_META = [
   {key:"tischNr",     label:"Tisch-Nr",           type:"text",     ph:"z. B. ST0001, T0071, „kein Pickerl“", hint:"Stehtisch (ST…) oder Tisch (T…)"},
@@ -485,23 +500,15 @@ function effectiveFloor(){
 
 function renderAppBar(){
   var floor = effectiveFloor();
-  var floorInteractive = (view.screen==="setup" || view.screen==="global");
   var backBtn = view.screen!=="setup"
-    ? '<button class="btn btn-ghost btn-icon" data-action="home" title="Start">'+iconHome()+'</button>'
+    ? '<button class="btn btn-secondary btn-icon" data-action="home" title="Start">'+iconHome()+'</button>'
     : "";
-
-  var floorControl;
-  if(floorInteractive){
-    floorControl = '<div class="floor-tabs">'+FLOORS.map(function(f){
-      return '<button type="button" class="floor-tab'+(f===floor?" is-active":"")+'" data-floor="'+f+'">'+f+'</button>';
-    }).join("")+'</div>';
-  } else {
-    floorControl = '<span class="floor-tab is-static">'+esc(floor)+'</span>';
-  }
 
   var subLabel = "";
   if(view.screen==="wizard" && state.session) subLabel = roomLabel(state.session.roomId);
   else if(view.screen==="roomOverview") subLabel = roomLabel(view.roomId);
+  else if(view.screen==="global") subLabel = "Gesamtübersicht";
+  else subLabel = "Etage "+floor;
 
   var overviewBtn = view.screen==="global"
     ? ""
@@ -511,11 +518,32 @@ function renderAppBar(){
   return ''+
     backBtn+
     '<div class="app-bar__brand">'+
-      '<span class="app-bar__floor-label">ETAGE</span>'+
-      floorControl+
-      (subLabel?'<span class="app-bar__sub">'+esc(subLabel)+'</span>':'')+
+      '<span class="floor-tab is-static">'+esc(floor)+'</span>'+
+      '<span class="app-bar__sub">'+esc(subLabel)+'</span>'+
     '</div>'+
     '<div class="app-bar__actions">'+mapBtn+overviewBtn+'</div>';
+}
+
+/* Großer, gut antippbarer Etagen-Umschalter für Setup & Gesamtübersicht */
+function renderFloorPicker(){
+  return '<div class="floor-picker" data-floor-picker>'+FLOORS.map(function(f){
+    return '<button type="button" class="floor-picker-btn'+(f===state.currentFloor?" is-active":"")+'" data-floor="'+f+'">'+
+      '<span class="floor-picker-btn__label">Etage</span>'+esc(f)+
+    '</button>';
+  }).join("")+'</div>';
+}
+function bindFloorPicker(onChange){
+  app.querySelectorAll('[data-floor-picker] [data-floor]').forEach(function(b){
+    b.addEventListener("click", function(){
+      var f = this.getAttribute("data-floor");
+      if(f!==state.currentFloor){
+        state.currentFloor = f;
+        saveState(true);
+        if(onChange) onChange();
+      }
+      render();
+    });
+  });
 }
 
 function afterRender(){
@@ -526,18 +554,6 @@ function afterRender(){
   app.querySelectorAll('[data-action="home"]').forEach(function(b){b.addEventListener("click",function(){go("setup");});});
   app.querySelectorAll('[data-action="global"]').forEach(function(b){b.addEventListener("click",function(){go("global");});});
   app.querySelectorAll('[data-action="map"]').forEach(function(b){b.addEventListener("click",function(){openMapViewer(effectiveFloor());});});
-  app.querySelectorAll('[data-floor]').forEach(function(b){
-    b.addEventListener("click", function(){
-      var f = this.getAttribute("data-floor");
-      if(f!==state.currentFloor){
-        state.currentFloor = f;
-        setupSel.roomId = null;
-        setupSel.filter = "";
-        saveState(true);
-      }
-      render();
-    });
-  });
 }
 
 /* ================= Icons (inline svg, currentColor) ================= */
@@ -556,6 +572,8 @@ function iconAlert(){return '<svg width="16" height="16" viewBox="0 0 24 24" fil
 function iconBox(){return '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8 12 3 3 8l9 5 9-5Z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>';}
 function iconX(){return '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>';}
 function iconMap(){return '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6.5 9 4l6 2.5L21 4v13.5L15 20l-6-2.5L3 20Z"/><path d="M9 4v13.5"/><path d="M15 6.5V20"/></svg>';}
+function iconUpload(){return '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V9"/><path d="m7 14 5-5 5 5"/><path d="M5 21h14"/></svg>';}
+function rubiconLogoSvg(){return '<svg class="brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 651.5 122.3"><path d="M195.7,68.6V101h-13.5V21.2h30.8c16.5,0,27.1,8.3,27.1,23.9c0,13.4-7.8,21-20.4,23l23.1,32.9h-15.3l-22.2-32.3L195.7,68.6L195.7,68.6z M195.7,57.3h17c9,0,14-4.8,14-12.2s-5.1-12.2-14-12.2h-17V57.3z"/><path d="M252.3,69.2V21.2h13.5v46.5c0,15.3,6.5,22.5,18.4,22.5s18.4-7.1,18.4-22.5V21.2h13.5v48.1c0,21.8-12.9,33-32,33C265.3,102.3,252.3,91.1,252.3,69.2z"/><path d="M390.6,78.1c0,14.9-10.4,22.9-27,22.9H333V21.2h27.9c16.6,0,27,7.4,27,21.7c0,8.6-4.5,14.8-10.4,16.9C385.1,62.3,390.6,69.7,390.6,78.1z M360.8,54.7c9.2,0,14.2-3.5,14.2-11s-4.9-10.8-14.2-10.8h-14.7v21.8H360.8z M346.1,89.3h17.1c9.1,0,14-4.5,14-11.7c0-7.3-4.9-11.7-14-11.7h-17.1V89.3z"/><path d="M418.2,101h-13.5V21.2h13.5V101z"/><path d="M470.3,19.9c9,0,16,2.6,21.2,6.9v14c-6.4-6-12.9-8.8-21-8.8c-15.2,0-25.1,11.9-25.1,29.1c0,17,9.9,29,25.1,29c8.2,0,14.7-2.7,21-8.7v14c-5.2,4.3-12.2,6.9-21.2,6.9c-22.2,0-38.6-16.6-38.6-41.2C431.7,36.6,448.1,19.9,470.3,19.9z"/><path d="M537.3,102.3c-21.6,0-36.8-17.4-36.8-41.2c0-23.9,15.2-41.2,36.8-41.2c21.6,0,36.9,17.3,36.9,41.2C574.2,84.9,558.9,102.3,537.3,102.3z M537.3,32c-14,0-23.1,12.2-23.1,29.1s9.1,29.1,23.1,29.1c14,0,23.2-12.2,23.2-29.1S551.3,32,537.3,32z"/><path d="M651.9,101h-10.4l-40.8-58.1V101h-13V21.2h12.7l38.4,55.3V21.2h13V101z"/><polygon class="st0" points="35.2,-0.1 -0.3,61.3 35.2,122.6 106,122.6 141.5,61.3 106,-0.1"/><path d="M80.9,83.5H60.4c-1.6,0-3.1-0.9-3.9-2.3L46.2,63.5c-0.8-1.4-0.8-3.1,0-4.5l10.2-17.7c0.8-1.4,2.3-2.3,3.9-2.3h20.5c1.6,0,3.1,0.9,3.9,2.3L95,59c0.8,1.4,0.8,3.1,0,4.5L84.8,81.3C84,82.7,82.5,83.5,80.9,83.5z M63,74.5h15.3l7.6-13.2L78.3,48H63l-7.6,13.2L63,74.5z"/><path d="M33.4,88.1c-1.6,0-3.1-0.8-3.9-2.3L16.6,63.5c-0.8-1.4-0.8-3.1,0-4.5l25.1-43.5c0.8-1.4,2.3-2.3,3.9-2.3h47.8c2.5,0,4.5,2,4.5,4.5s-2,4.5-4.5,4.5H48.1l-22.5,39l11.6,20.1c1.2,2.2,0.5,4.9-1.7,6.1C34.9,87.9,34.1,88.1,33.4,88.1z"/><path d="M95.7,109.1H47.9c-2.5,0-4.5-2-4.5-4.5s2-4.5,4.5-4.5h45.2l22.5-38.9l-11.4-19.7c-1.2-2.2-0.5-4.9,1.6-6.1c2.2-1.2,4.9-0.5,6.1,1.6l12.7,22c0.8,1.4,0.8,3.1,0,4.5l-25.1,43.4C98.8,108.3,97.3,109.1,95.7,109.1z"/></svg>';}
 
 /* ================= Helpers ================= */
 function esc(s){
@@ -729,8 +747,11 @@ function renderSetup(){
   }).join("");
 
   return ''+
+  '<div class="brand-header">'+rubiconLogoSvg()+'</div>'+
   '<h1 class="page-title">Neuer Rundgang</h1>'+
-  '<p class="page-sub">Etage '+esc(state.currentFloor)+' · Raum auswählen und Anzahl der zu prüfenden Tische eingeben.</p>'+
+  '<p class="page-sub">Etage auswählen, dann Raum und Anzahl der zu prüfenden Tische.</p>'+
+  '<div class="section-label">Etage</div>'+
+  renderFloorPicker()+
   '<div class="section-label">Raum</div>'+
   '<div class="search-wrap"><span class="search-icon">'+searchIcon()+'</span>'+
   '<input class="input" id="room-search" placeholder="Raum suchen … z. B. 7 oder Küche" autocomplete="off" spellcheck="false"></div>'+
@@ -747,6 +768,8 @@ function renderSetup(){
 function searchIcon(){return '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>';}
 
 function bindSetup(){
+  bindFloorPicker(function(){ setupSel.roomId=null; setupSel.filter=""; });
+
   var search = document.getElementById("room-search");
   search.value = setupSel.filter;
   search.addEventListener("input", function(){ setupSel.filter=this.value; refreshRoomList(); });
@@ -1223,9 +1246,17 @@ function showFinishResult(roomId, text, ok){
 }
 
 /* ================= GLOBAL OVERVIEW ================= */
+function knownAndExtraRoomIds(){
+  var seen = Object.create(null);
+  var out = [];
+  ALL_ROOM_IDS.forEach(function(id){ if(!seen[id]){ seen[id]=true; out.push(id); } });
+  Object.keys(state.rooms).forEach(function(id){ if(!seen[id]){ seen[id]=true; out.push(id); } });
+  return out;
+}
+
 function allTables(){
   var out=[];
-  ALL_ROOM_IDS.forEach(function(id){
+  knownAndExtraRoomIds().forEach(function(id){
     roomTables(id).forEach(function(t){ out.push({roomId:id, t:t}); });
   });
   return out;
@@ -1236,7 +1267,7 @@ function renderGlobal(){
   var total = all.length;
   var yes = all.filter(function(x){return x.t.geprueft;}).length;
   var no = total-yes;
-  var roomsWithData = ALL_ROOM_IDS.filter(function(id){ return roomTables(id).length>0; }).length;
+  var roomsWithData = knownAndExtraRoomIds().filter(function(id){ return roomTables(id).length>0; }).length;
   var pct = total ? Math.round(yes/total*100) : 0;
 
   var floorIds = roomIdsForFloor(state.currentFloor);
@@ -1252,13 +1283,14 @@ function renderGlobal(){
     '</button>';
   }).join("");
 
+  var knownTotal = knownAndExtraRoomIds().length;
   return ''+
   '<h1 class="page-title">Gesamtübersicht</h1>'+
-  '<p class="page-sub">'+roomsWithData+' von '+ALL_ROOM_IDS.length+' Räumen (alle 5 Etagen) mit erfassten Daten.</p>'+
+  '<p class="page-sub">'+roomsWithData+' von '+knownTotal+' Räumen (alle '+FLOORS.length+' Etagen) mit erfassten Daten.</p>'+
 
   '<div class="stat-row">'+
     '<div class="stat-tile"><div class="stat-tile__num">'+total+'</div><div class="stat-tile__label">Tische</div></div>'+
-    '<div class="stat-tile"><div class="stat-tile__num">'+roomsWithData+'/'+ALL_ROOM_IDS.length+'</div><div class="stat-tile__label">Räume</div></div>'+
+    '<div class="stat-tile"><div class="stat-tile__num">'+roomsWithData+'/'+knownTotal+'</div><div class="stat-tile__label">Räume</div></div>'+
     '<div class="stat-tile"><div class="stat-tile__num">'+pct+'%</div><div class="stat-tile__label">Geprüft</div></div>'+
   '</div>'+
 
@@ -1267,8 +1299,17 @@ function renderGlobal(){
     '<div class="ratio-bar"><div class="ratio-bar__yes" style="width:'+(total?yes/total*100:0)+'%"></div></div>'+
   '</div>'+
 
+  '<div class="section-label">Etage</div>'+
+  renderFloorPicker()+
   '<div class="section-label">Räume · Etage '+esc(state.currentFloor)+'</div>'+
   '<div class="room-grid">'+tiles+'</div>'+
+
+  '<div class="section-label">Import</div>'+
+  '<div class="action-grid">'+
+    '<button class="btn btn-primary full" id="import-xlsx">'+iconUpload()+' Excel-Tabelle importieren</button>'+
+  '</div>'+
+  '<p class="page-sub" style="margin:2px 2px 18px">Liest eine .xlsx/.xls/.csv-Datei ein und trägt die Zeilen automatisch als neue Tische ein (Spalten wie beim Export, Reihenfolge oder Kopfzeile werden erkannt).</p>'+
+  '<input type="file" accept=".xlsx,.xls,.csv" id="import-file-input" style="display:none">'+
 
   '<div class="section-label">Export</div>'+
   '<div class="action-grid">'+
@@ -1279,6 +1320,8 @@ function renderGlobal(){
 }
 
 function bindGlobal(){
+  bindFloorPicker();
+
   document.querySelectorAll("[data-goroom]").forEach(function(btn){
     btn.addEventListener("click", function(){
       var id = this.getAttribute("data-goroom");
@@ -1293,6 +1336,14 @@ function bindGlobal(){
   document.getElementById("copy-all").addEventListener("click", copyAllData);
   document.getElementById("export-xlsx").addEventListener("click", exportXLSX);
   document.getElementById("reset-all").addEventListener("click", confirmReset);
+
+  var importInput = document.getElementById("import-file-input");
+  document.getElementById("import-xlsx").addEventListener("click", function(){ importInput.click(); });
+  importInput.addEventListener("change", function(){
+    var file = importInput.files && importInput.files[0];
+    importInput.value = "";
+    if(file) handleImportFile(file);
+  });
 }
 
 function copyAllData(){
@@ -1327,6 +1378,152 @@ function exportXLSX(){
   var stamp = d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
   XLSX.writeFile(wb, "Raeumecheck_"+stamp+".xlsx");
   toast("Excel-Datei wird heruntergeladen.","download");
+}
+
+/* ================= Excel-Import ================= */
+var IMPORT_FIELD_ORDER = ["room","tischNr","laptopNr","monitor1","monitor2","monitor3","dockingNr","geprueft","anmerkungen"];
+var IMPORT_FIELD_ALIASES = {
+  room:        ["raumnummer","raum","raumnr","room","zimmer","zimmernummer"],
+  tischNr:     ["tischnr","tisch","stehtisch","tischnummer","desk","tischid"],
+  laptopNr:    ["laptopnr","laptop","laptopnummer","notebook"],
+  monitor1:    ["monitor1nr","monitor1","monitornr1","bildschirm1"],
+  monitor2:    ["monitor2nr","monitor2","monitornr2","bildschirm2"],
+  monitor3:    ["monitor3nr","monitor3","monitornr3","bildschirm3"],
+  dockingNr:   ["dockingstationnr","dockingstation","docking","dockingnr"],
+  geprueft:    ["geprueft","gepruft","geprüft","kontrolliert","erledigt","vollstandig","vollständig"],
+  anmerkungen: ["anmerkungen","anmerkung","notiz","notizen","bemerkung","kommentar","notes"]
+};
+function normalizeHeaderCell(s){
+  return String(s==null?"":s).toLowerCase().replace(/[^a-z0-9äöüß]/g,"");
+}
+function cellToText(v){
+  if(v==null) return "";
+  if(typeof v==="boolean") return v ? "Ja" : "Nein";
+  return String(v).trim();
+}
+function parseGeprueftCell(v){
+  if(typeof v==="boolean") return v;
+  var s = String(v==null?"":v).trim().toLowerCase();
+  return ["ja","yes","true","1","x","✓"].indexOf(s)>=0;
+}
+
+function detectHeaderColumnMap(row){
+  var norm = row.map(normalizeHeaderCell);
+  var map = {};
+  var matches = 0;
+  IMPORT_FIELD_ORDER.forEach(function(field){
+    var aliases = IMPORT_FIELD_ALIASES[field].map(normalizeHeaderCell);
+    for(var i=0;i<norm.length;i++){
+      if(!norm[i]) continue;
+      var hit = aliases.some(function(a){ return norm[i].indexOf(a)>=0; });
+      if(hit){ map[field]=i; matches++; break; }
+    }
+  });
+  if(map.room===undefined || matches<4) return null;
+  return map;
+}
+
+function parseImportRows(rows){
+  rows = rows.filter(function(r){ return r && r.some(function(c){ return c!=null && String(c).trim()!==""; }); });
+  if(!rows.length) return {entries:[], skipped:0, unknownFloors:[]};
+
+  var colMap = detectHeaderColumnMap(rows[0]);
+  var dataRows = colMap ? rows.slice(1) : rows;
+  if(!colMap){
+    colMap = {};
+    IMPORT_FIELD_ORDER.forEach(function(field, i){ colMap[field]=i; });
+  }
+
+  var entries = [];
+  var skipped = 0;
+  var unknownFloorsSet = Object.create(null);
+  dataRows.forEach(function(r){
+    var roomId = cellToText(r[colMap.room]);
+    var tischNr = cellToText(r[colMap.tischNr]);
+    if(!roomId){ skipped++; return; }
+    var entry = {
+      roomId: roomId,
+      tischNr: tischNr,
+      laptopNr: cellToText(r[colMap.laptopNr]),
+      monitor1: cellToText(r[colMap.monitor1]),
+      monitor2: cellToText(r[colMap.monitor2]),
+      monitor3: cellToText(r[colMap.monitor3]),
+      dockingNr: cellToText(r[colMap.dockingNr]),
+      geprueft: parseGeprueftCell(r[colMap.geprueft]),
+      anmerkungen: cellToText(r[colMap.anmerkungen])
+    };
+    entries.push(entry);
+    if(FLOORS.indexOf(floorOfRoomId(roomId))<0) unknownFloorsSet[floorOfRoomId(roomId)]=true;
+  });
+  return {entries:entries, skipped:skipped, unknownFloors:Object.keys(unknownFloorsSet)};
+}
+
+function commitImport(entries){
+  entries.forEach(function(e){
+    var room = getRoom(e.roomId);
+    room.tables.push({
+      id: nextId(),
+      tischNr: e.tischNr, laptopNr: e.laptopNr,
+      monitor1: e.monitor1, monitor2: e.monitor2, monitor3: e.monitor3,
+      dockingNr: e.dockingNr, geprueft: e.geprueft, anmerkungen: e.anmerkungen
+    });
+  });
+  saveState(true);
+}
+
+function handleImportFile(file){
+  if(typeof XLSX === "undefined"){ toast("Import-Bibliothek nicht geladen.","warn"); return; }
+  var isCsv = /\.csv$/i.test(file.name);
+  var reader = new FileReader();
+  reader.onerror = function(){ toast("Datei konnte nicht gelesen werden.","warn"); };
+  reader.onload = function(e){
+    var workbook;
+    try{
+      workbook = isCsv
+        ? XLSX.read(e.target.result, {type:"string"})
+        : XLSX.read(e.target.result, {type:"array"});
+    }catch(err){ toast("Datei konnte nicht gelesen werden (kein gültiges Excel-Format?).","warn"); return; }
+    var sheetName = workbook.SheetNames[0];
+    if(!sheetName){ toast("Keine Tabelle in der Datei gefunden.","warn"); return; }
+    var sheet = workbook.Sheets[sheetName];
+    var rows = XLSX.utils.sheet_to_json(sheet, {header:1, defval:""});
+    var result = parseImportRows(rows);
+    if(!result.entries.length){ toast("Keine verwertbaren Zeilen gefunden.","warn"); return; }
+    showImportPreview(result, file.name);
+  };
+  if(isCsv) reader.readAsText(file, "UTF-8");
+  else reader.readAsArrayBuffer(file);
+}
+
+function showImportPreview(result, fileName){
+  var roomSet = Object.create(null);
+  result.entries.forEach(function(e){ roomSet[e.roomId]=true; });
+  var roomCount = Object.keys(roomSet).length;
+  var warnHtml = "";
+  if(result.skipped>0){
+    warnHtml += '<p class="modal__body" style="margin-top:-8px">'+result.skipped+' Zeile(n) ohne Raumnummer wurden übersprungen.</p>';
+  }
+  if(result.unknownFloors.length){
+    warnHtml += '<p class="modal__body" style="margin-top:-8px">Hinweis: Etage(n) "'+esc(result.unknownFloors.join(", "))+'" sind nicht in der Etagen-Auswahl (M, '+FLOORS.slice(1).join(", ")+') – Daten werden trotzdem gespeichert, erscheinen aber nicht im Etagen-Raster.</p>';
+  }
+  openModal(
+    '<h3 class="modal__title">'+iconUpload()+' Import aus „'+esc(fileName)+'"</h3>'+
+    '<p class="modal__body"><strong>'+result.entries.length+'</strong> Tisch-Zeile(n) aus <strong>'+roomCount+'</strong> Raum/Räumen gefunden. Diese werden als neue Einträge zu den bestehenden Daten hinzugefügt (bestehende Einträge bleiben unverändert).</p>'+
+    warnHtml+
+    '<div class="modal__actions">'+
+      '<button class="btn btn-secondary" id="m-cancel">Abbrechen</button>'+
+      '<button class="btn btn-primary" id="m-import">'+iconCheck()+' Importieren</button>'+
+    '</div>',
+    function(overlay){
+      overlay.querySelector("#m-cancel").addEventListener("click", closeModal);
+      overlay.querySelector("#m-import").addEventListener("click", function(){
+        commitImport(result.entries);
+        closeModal();
+        toast(result.entries.length+" Zeile(n) importiert.","ok");
+        go("global");
+      });
+    }
+  );
 }
 
 function confirmReset(){

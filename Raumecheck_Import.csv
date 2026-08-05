@@ -1,0 +1,55 @@
+Raumnummer,Tisch-Nr,Laptop-Nr,Monitor1-Nr,Monitor2-Nr,Monitor3-Nr,Dockingstation-Nr,Geprüft?,Anmerkungen
+E16.M.1,ST0001,L1223,1300-817,1300-820,1300-819,D0238,Ja,
+E16.M.1,ST0037,L1257,1300-799,1300-800,1300-811,D0150,Ja,Docking Station nummer ist nicht gültig
+E16.M.1,ST000X,L1258,1300-812,1300-807,1300-808,D0109,Nein,Tisch hat kein Pickerl
+E16.M.1,ST0003,nicht da,1300-763,1300-816,1300-821,D0231,Nein,Laptop Nr nicht geprüft da Abwesend
+E16.M.1,ST000X,nicht da,1300-774,1300-515,,D0085,Nein,"Tisch hat kein Pickerl, Laptop-Abwesend"
+E16.M.2,ST0056,L1255,1300-993,1300-992,,D0210,Ja,
+E16.M.2,ST000X,W1290,1300-470,1300-664,1300-519,Standrechner,Nein,Pickerlnummer nicht sichtbar
+E16.M.2,ST0047,W1219,1300-273,1300-250,1300-387,Standrechner,Ja,
+E16.M.2,ST0048,nicht da,1300-181,1300-299,hat keinen,D0008,Nein,Laptop Nr nicht geprüft da Abwesend
+E16.M.2,ST0046,nicht da,1300-351,1300-368,1300-193,D0066,Nein,Laptop Nr nicht geprüft da Abwesend
+E16.M.2,ST0105,nicht da,1300-965,1300-964,,D0184,Nein,Laptop Nr nicht geprüft da Abwesend
+E16.M.2,ST0082,nicht da,hat keinen,hat keinen,hat keinen,,Nein,neuer Tisch noch kein Equipment
+E16.M.3,ST0044,W1284,1300-303,1300-226,1300-267,hat keine,Ja,
+E16.M.3,T0071,W1250,1300-108,1300-331,1300-394,hat keine,Ja,
+E16.M.3,ST0043,W1246,1300-719,1300-718,1300-717,hat keine,Ja,
+E16.M.3,T0070,1100-291,1300-432,hat keinen,hat keinen,hat keine,Ja,Mac Mini
+E16.M.3,ST0059,W1229,1300-471,1300-503,1300-653,hat keine,Ja,
+E16.M.3,ST0057,W1251,1300-300,1300-296,1300-384,hat keine,Ja,
+E16.M.3,ST0058,W1170,1300-701,1300-704,1300-673,hat keine,Ja,
+E16.M.3,ST0053,W1155,1300-943,1300-556,1300-557,hat keine,Ja,
+E16.M.3,T0036,L1301,1300-793,1300-792,1300-535,D0075,Ja,
+E16.M.3,ST0042,W1261,1300-764,1300-604,1300-605,hat keine,Ja,
+E16.M.3,T0056,W1239,1300-235,1300-699,hat keinen,hat keine,Ja,
+E16.M.4,T0060,W1112,1300-314,1300-320,hat keinen,D0198,Ja,
+E16.M.5,ST000X,W1192,1300-205,1300-244,1300-254,hat keine,Nein,Tisch hat kein Pickerl
+E16.M.5,ST0154,nicht da,1300-483,1300-481,1300-479,D0100,Nein,"Laptop Nr nicht geprüft da Abwesend / Tischnummer nicht im System"
+E16.M.5,ST0055,W1264,1300-632,1300-538,1300-539,hat keine,Ja,
+E16.M.5,ST0052,W1286,1300-169,1300-161,1300-323,hat keine,Ja,
+E16.M.5,ST0029,W1244,kein sticker,1300-991,hat keinen,hat keine,Nein,Monitor hat keinen Sticker
+E16.M.7,ST0061,nicht da,1300-863,1300-262,hat keinen,D0103,Nein,Laptop Nr nicht geprüft da Abwesend
+E16.M.7,ST0122,nicht da,1300-484,1300-525,hat keinen,D0129,Nein,Laptop Nr nicht geprüft da Abwesend
+E16.M.7,ST0054,L1316,1300-537,1300-840,hat keinen,D0187,Ja,
+E16.M.7,ST0062,L1205,1300-646,1300-650,hat keinen,D0120,Ja,
+E16.M.10,ST0060,L1256,1300-731,1300-744,hat keinen,D0135,Ja,
+E16.M.10,T0069,nicht da,1300-256,hat keinen,hat keinen,D0208,Nein,Laptop Nr nicht geprüft da Abwesend
+E16.M.11,T0074,W1230,1300-427,1300-422,1300-369,hat keine,Ja,
+E16.M.11,ST0038,W1289,1300-742,kein Sticker,1300-676,hat keine,Nein,Monitor hat kein Sticker
+E16.M.11,ST0033,nicht da,1300-730,1300-750,1300-726,D0234,Nein,Laptop Nr nicht geprüft da Abwesend
+E16.M.11,kein Pickerl,W1301,1300-725,1300-1004,1300-1005,keine,Nein,Tisch hat kein Pickerl
+E16.M.11,kein Pickerl,W1280,hat keinen,hat keinen,hat keinen,keine,Nein,Tisch hat kein Pickerl
+E16.M.11,St0032,W1293,1300-443,1300-163,1300-416,hat keine,Ja,
+E16.M.11,ST0034,W1304,1300-177,1300-251,1300-505,hat keine,Ja,
+E16.M.11,kein Plckerl,kein Pickerl,1300-749,1300-564,1300-611,hat keine,Nein,"Tisch, Laptop hat kein Pickerl"
+E16.M.12,ST0036,W1108,1300-243,1300-576,hat keine,,Ja,
+E16.M.16,ST0010,W1211,1300-527,1300-528,hat keine,hat keine,Ja,
+E16.M.16,ST0031,W1160,kein Pickerl,1300-818,hat keine,hat keine,Nein,Monitor hat kein Pickerl
+E16.M.16,ST0011,W1096,1300-983,1300-984,hat keine,hat keine,Ja,
+E16.M.16,ST0012,W1092,kein Pickerl,hat keine,hat keine,,Nein,Monitor hat kein Pickerl
+E16.M.16,ST0007,W1091,1300-463,1300-972,hat keine,hat keine,Ja,
+E16.M.16,T0036,nicht da,1300-230,hat keinen,hat keinen,kein Pickerl,Nein,"Laptop Nr nicht geprüft da Abwesend / 4. Monitor kein Pickerl"
+E16.M.16,ST0014,W1105,kein Pickerl,1300-815,1300-814,,Nein,4. Monitor kein Pickerl
+E16.M.24,T0012,kein Pickerl,1300-734,1300-733,1300-734,hat keine,Nein,4. Monitor 1300-867
+E16.M.25,ST0028,kein Pickerl,1300-857,1300-858,hat keinen,kein Sticker,Nein,Laptop kein Pickerl
+E16.M.25,ST0016,nicht da,1300-822,1300-823,,D0139,Nein,Laptop Nr nicht geprüft da Abwesend
