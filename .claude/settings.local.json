@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell($ProgressPreference = 'SilentlyContinue'; try { $resp = Invoke-WebRequest -Uri \"https://cdn.sheetjs.com/xlsx-0.18.5/package/dist/xlsx.full.min.js\" -UseBasicParsing -TimeoutSec 60; Write-Output \"STATUS: $\\($resp.StatusCode\\)\"; Write-Output \"LENGTH_BYTES: $\\($resp.RawContentLength\\)\"; Write-Output \"CONTENT_LENGTH_HEADER: $\\($resp.Headers['Content-Length']\\)\"; } catch { Write-Output \"ERROR: $\\($_.Exception.Message\\)\" })"
+    ]
+  }
+}
