@@ -3,10 +3,9 @@ import { Icon } from "../components/icons/Icon";
 import { useToast } from "../components/toast/useToast";
 import { copyToClipboard } from "../lib/clipboard";
 
-// Zeigt das Ergebnis des Kopierversuchs beim Abschließen eines Raums. Klappt
-// das automatische Kopieren nicht, etwa weil die Seite ohne https geöffnet
-// wurde, bleibt der Text sichtbar stehen, damit er sich von Hand markieren
-// und kopieren lässt.
+// Shows the result of the copy attempt when finishing a room. If automatic
+// copying fails — for instance because the page was opened without https —
+// the text stays visible so it can be selected and copied by hand.
 export function FinishRoomModal({ ok, text, tableCount, roomLabelText, onClose }) {
   const toast = useToast();
 

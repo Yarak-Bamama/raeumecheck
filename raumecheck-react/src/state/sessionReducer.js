@@ -1,9 +1,9 @@
-// Der "Session"-Teil des States beschreibt einen laufenden Rundgang durch
-// einen Raum: welcher Raum, wie viele Tische geplant sind, wie viele schon
-// fertig sind, und der Entwurf des gerade offenen Tisches. Diese Datei regelt
-// nur den Übergang von einem Tisch zum nächsten, die Frage "welches Feld
-// kommt als nächstes dran" gehört bewusst der Wizard-Komponente, weil das
-// reine Bedienlogik ist und keine Datenhaltung.
+// The "session" part of the state describes an inspection round in
+// progress for a room: which room, how many desks are planned, how many
+// are already done, and the draft of the desk currently open. This file
+// only handles the transition from one desk to the next; the question of
+// "which field comes next" deliberately belongs to the wizard component,
+// since that's pure UI logic, not state management.
 
 import { emptyDraft, FIELD_KEYS } from "../lib/fields";
 import { addTable, popLastTable } from "./roomsReducer";
@@ -18,10 +18,10 @@ export function startSession(roomId, plannedCount) {
   };
 }
 
-// Schließt den aktuellen Entwurf als fertigen Tisch ab und hängt ihn an die
-// Raumliste an. Ist danach die geplante Anzahl erreicht, endet die Session
-// und man landet in der Raumübersicht, sonst geht es mit einem leeren
-// Entwurf für den nächsten Tisch weiter.
+// Finalizes the current draft as a completed desk and appends it to the
+// room list. If the planned count is reached afterward, the session ends
+// and the user lands on the room overview; otherwise it continues with an
+// empty draft for the next desk.
 export function finalizeTable(rooms, session) {
   const table = { id: crypto.randomUUID(), ...session.draft };
   const nextRooms = addTable(rooms, session.roomId, table);
@@ -43,11 +43,11 @@ export function finalizeTable(rooms, session) {
   };
 }
 
-// Nimmt den zuletzt abgeschlossenen Tisch wieder aus der Liste und legt ihn
-// als Entwurf zurück, damit man ihn korrigieren kann. Wird nur für den
-// unmittelbar vorherigen Tisch benutzt (Zurück-Button ganz am Anfang eines
-// neuen Tisches), nicht für beliebig weit zurückliegende Tische, denn dafür
-// gibt es den Bearbeiten-Dialog in der Raumübersicht.
+// Takes the most recently completed desk back out of the list and restores
+// it as a draft so it can be corrected. Only used for the immediately
+// preceding desk (the Back button right at the start of a new desk), not
+// for desks further back — that's what the edit dialog in the room
+// overview is for.
 export function retreatToPreviousTable(rooms, session) {
   const { rooms: nextRooms, removedTable } = popLastTable(rooms, session.roomId);
   if (!removedTable) return { rooms, session };

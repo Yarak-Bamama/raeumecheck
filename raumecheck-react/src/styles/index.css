@@ -1,5 +1,6 @@
-/* Sammelt alle Stylesheets der App an einer Stelle. Die Reihenfolge ist
-   bewusst so gewählt, dass allgemeinere Regeln vor spezifischeren stehen. */
+/* Collects all of the app's stylesheets in one place. The order is
+   deliberately chosen so that more general rules come before more
+   specific ones. */
 
 @import "./tokens.css";
 @import "./base.css";

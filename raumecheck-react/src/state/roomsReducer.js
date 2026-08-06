@@ -1,8 +1,7 @@
-// Reine Funktionen für alles, was die erfassten Tische selbst verändert:
-// hinzufügen, bearbeiten, löschen und der Massen-Import aus Excel. Jede
-// Funktion bekommt das bisherige "rooms"-Objekt und liefert ein neues
-// zurück, ohne das alte zu verändern, wie es React für einen Reducer
-// erwartet.
+// Pure functions for everything that modifies the captured desks
+// themselves: adding, editing, deleting, and bulk import from Excel. Each
+// function takes the previous "rooms" object and returns a new one without
+// mutating the old one, as React expects from a reducer.
 
 function getTables(rooms, roomId) {
   return rooms[roomId]?.tables ?? [];
@@ -28,10 +27,9 @@ export function deleteTable(rooms, roomId, tableId) {
   return { ...rooms, [roomId]: { tables } };
 }
 
-// Entfernt einen bereits abgeschlossenen Tisch wieder aus der Liste, damit
-// der Wizard ihn zur Korrektur erneut als Entwurf anzeigen kann. Gibt sowohl
-// die neuen Räume als auch den entfernten Tisch zurück, denn genau der wird
-// gebraucht, um das Entwurfsformular damit vorzubefüllen.
+// Removes an already-completed desk from the list so the wizard can show
+// it again as a draft for correction. Returns both the updated rooms and
+// the removed desk, since the latter is needed to pre-fill the draft form.
 export function popLastTable(rooms, roomId) {
   const tables = getTables(rooms, roomId);
   const removedTable = tables[tables.length - 1];

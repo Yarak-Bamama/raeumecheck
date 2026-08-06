@@ -1,10 +1,9 @@
 import * as XLSX from "xlsx";
 import { EXPORT_HEADER, tableToRowValues } from "./tsv";
 
-// Baut aus allen erfassten Tischen eine Excel-Datei und stößt den Download
-// im Browser an. Die Spaltenbreiten sind grob an die erwarteten Inhalte
-// angepasst, damit die Datei nicht mit winzigen, abgeschnittenen Spalten
-// aufgeht, wenn man sie öffnet.
+// Builds an Excel file from all captured desks and triggers the download in
+// the browser. Column widths are roughly matched to the expected content so
+// the file doesn't open with tiny, truncated columns.
 export function exportToXlsx(entries) {
   const rows = [EXPORT_HEADER, ...entries.map(({ roomId, table }) => tableToRowValues(roomId, table))];
   const worksheet = XLSX.utils.aoa_to_sheet(rows);

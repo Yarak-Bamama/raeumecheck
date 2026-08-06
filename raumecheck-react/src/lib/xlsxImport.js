@@ -20,12 +20,11 @@ function parseGeprueftCell(value) {
   return ["ja", "yes", "true", "1", "x", "✓"].includes(text);
 }
 
-// Prüft, ob die erste Zeile der Tabelle wie eine Kopfzeile aussieht, und
-// baut dabei gleich die Zuordnung von Spaltenindex zu Feldname. Kommen dabei
-// weniger als vier Felder zusammen oder wird gar keine Raumnummer-Spalte
-// gefunden, wird die Zeile stattdessen als normale Datenzeile behandelt und
-// stattdessen auf die feste Spaltenreihenfolge unseres eigenen Exports
-// zurückgefallen.
+// Checks whether the sheet's first row looks like a header row, and builds
+// the column-index-to-field-name mapping along the way. If fewer than four
+// fields match, or no room-number column is found at all, the row is
+// treated as a regular data row instead, and the code falls back to the
+// fixed column order used by our own export.
 function detectHeaderColumnMap(row) {
   const normalizedCells = row.map(normalizeHeaderCell);
   const columnMap = {};
@@ -84,9 +83,9 @@ export function parseImportRows(rows) {
   return { entries, skipped, unknownFloors: [...unknownFloors] };
 }
 
-// Liest eine hochgeladene Datei ein und liefert die geparsten Zeilen zurück.
-// CSV-Dateien werden als Text gelesen, xlsx/xls dagegen als Binärdaten, weil
-// SheetJS für beide Fälle einen anderen Lesemodus braucht.
+// Reads an uploaded file and returns the parsed rows. CSV files are read as
+// text, while xlsx/xls files are read as binary data, since SheetJS needs a
+// different read mode for each case.
 export function readWorkbookFile(file) {
   const isCsv = /\.csv$/i.test(file.name);
 

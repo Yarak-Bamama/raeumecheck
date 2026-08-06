@@ -1,8 +1,7 @@
 import { Modal } from "../components/Modal";
 
-// Wird nur gezeigt, wenn das automatische Kopieren beim "Alles kopieren"
-// fehlgeschlagen ist, damit der Text wenigstens von Hand markiert und
-// kopiert werden kann.
+// Only shown when the automatic copy triggered by "Copy all" fails, so the
+// text can at least be selected and copied by hand.
 export function CopyFallbackModal({ text, onClose }) {
   return (
     <Modal onClose={onClose}>

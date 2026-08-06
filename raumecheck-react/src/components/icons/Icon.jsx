@@ -1,9 +1,9 @@
 import { ICONS } from "./iconPaths";
 
-// Rendert eines der vordefinierten Strich-Icons. Die Form kommt aus
-// iconPaths.js, alles andere (Größe, Strichstärke, Farbe) wird hier einheit-
-// lich gesetzt, damit neue Icons einfach nur ihre Pfaddaten mitbringen
-// müssen und sich automatisch ins Gesamtbild einfügen.
+// Renders one of the predefined line icons. The shape comes from
+// iconPaths.js; everything else (size, stroke width, color) is applied
+// consistently here, so new icons only need to supply their path data and
+// automatically fit into the overall look.
 export function Icon({ name, className }) {
   const icon = ICONS[name];
   if (!icon) return null;

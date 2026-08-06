@@ -6,12 +6,12 @@ import { WizardField } from "../components/WizardField";
 import { Icon } from "../components/icons/Icon";
 import { CancelWizardModal } from "../modals/CancelWizardModal";
 
-// Führt Tisch für Tisch durch die acht Felder. Der Kern der Bedienlogik ist,
-// dass Enter in einem Feld zum nächsten springt, ganz ohne Maus. Welches
-// Feld gerade "aktiv" ist, steht in der Session im globalen State, damit ein
-// Reload mitten im Ausfüllen nichts verliert. Welches DOM-Element für ein
-// Feld tatsächlich den Fokus bekommen muss, ist dagegen reine Bedienlogik
-// und wird hier lokal über Refs verwaltet.
+// Walks through the eight fields, desk by desk. The core of the UX is that
+// pressing Enter in a field jumps to the next one, entirely without a
+// mouse. Which field is currently "active" lives in the session in global
+// state, so a reload mid-entry doesn't lose anything. Which DOM element
+// actually needs to receive focus for a given field, on the other hand, is
+// pure UI logic and is managed locally here via refs.
 export function WizardScreen({ goTo }) {
   const { state, dispatch } = useAppState();
   const session = state.session;
@@ -36,7 +36,7 @@ export function WizardScreen({ goTo }) {
 
   useEffect(() => {
     if (session) focusField(session.activeField);
-    // Nur beim Wechsel des aktiven Felds neu fokussieren, nicht bei jeder Änderung des Entwurfstexts.
+    // Refocus only when the active field changes, not on every draft text edit.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [session?.activeField, session?.completedCount]);
 

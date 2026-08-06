@@ -1,5 +1,5 @@
-/* Grundreset, App-Rahmen und die überall wiederverwendeten Bausteine:
-   Buttons, Textfelder und die Ja/Nein-Umschalter. */
+/* Base reset, app shell, and the building blocks reused throughout the
+   app: buttons, text fields, and the yes/no toggles. */
 
 *,
 *::before,
@@ -176,7 +176,7 @@ main {
   padding: 13px 20px;
 }
 
-/* Textfelder */
+/* Text fields */
 .field {
   margin-bottom: 16px;
 }

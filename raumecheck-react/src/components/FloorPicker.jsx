@@ -1,11 +1,11 @@
 import { FLOORS } from "../lib/floors";
 import { useAppState } from "../state/useAppState";
 
-// Die große, gut antippbare Etagen-Auswahl auf dem Start-Screen und in der
-// Gesamtübersicht. onFloorChange ist optional und wird zum Beispiel im
-// Start-Screen gebraucht, um die Raumauswahl zurückzusetzen, sobald man die
-// Etage wechselt, denn ein vorher gewählter Raum gehört sonst plötzlich zur
-// falschen Etage.
+// The large, easily tappable floor selector used on the start screen and
+// in the global overview. onFloorChange is optional and is needed, for
+// example, on the start screen to clear the room selection as soon as the
+// floor changes — otherwise a previously selected room would suddenly
+// belong to the wrong floor.
 export function FloorPicker({ onFloorChange }) {
   const { state, dispatch } = useAppState();
 

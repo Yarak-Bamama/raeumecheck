@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Modal } from "../components/Modal";
 import { Icon } from "../components/icons/Icon";
 
-// Damit ein versehentlicher Klick nicht sofort alle Daten löscht, muss man
-// hier erst das Wort LÖSCHEN eintippen, bevor der eigentliche Löschen-Knopf
-// überhaupt aktiv wird.
+// So an accidental click doesn't immediately wipe all data, the user must
+// first type the confirmation word here before the actual delete button
+// becomes active at all.
 export function ResetConfirmModal({ onConfirm, onClose }) {
   const [confirmText, setConfirmText] = useState("");
   const canConfirm = confirmText.trim().toUpperCase() === "LÖSCHEN";

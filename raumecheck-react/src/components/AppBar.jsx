@@ -2,9 +2,9 @@ import { floorOfRoomId, roomLabel } from "../lib/floors";
 import { useAppState } from "../state/useAppState";
 import { Icon } from "./icons/Icon";
 
-// Ermittelt, welche Etage gerade "gemeint" ist. Im Wizard und in der Raum-
-// übersicht ergibt sich das aus dem gerade offenen Raum, auf den anderen
-// Screens ist es schlicht die zuletzt gewählte Etage.
+// Determines which floor is currently "implied". In the wizard and the room
+// overview, this follows from the room currently open; on the other
+// screens, it's simply the last selected floor.
 function effectiveFloor(view, state) {
   if (view.screen === "wizard" && state.session) return floorOfRoomId(state.session.roomId);
   if (view.screen === "roomOverview") return floorOfRoomId(view.roomId);

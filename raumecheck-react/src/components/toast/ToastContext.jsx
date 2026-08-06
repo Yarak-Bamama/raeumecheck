@@ -5,10 +5,10 @@ export const ToastContext = createContext(null);
 const VISIBLE_DURATION_MS = 2600;
 const LEAVE_ANIMATION_MS = 220;
 
-// Verwaltet die Liste der gerade sichtbaren Toast-Meldungen. Jeder Toast
-// bekommt zuerst den Zustand "sichtbar" und wechselt kurz vor dem Entfernen
-// in den Zustand "leaving", damit die Ausblend-Animation in ToastHost Zeit
-// hat zu spielen, bevor der Eintrag wirklich aus der Liste verschwindet.
+// Manages the list of currently visible toast messages. Each toast starts
+// out in the "visible" state and switches to "leaving" shortly before
+// removal, giving the fade-out animation in ToastHost time to play before
+// the entry is actually removed from the list.
 export function ToastProvider({ children }) {
   const [toasts, setToasts] = useState([]);
 

@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 
-// Das Grundgerüst für alle Dialoge in der App: ein abgedunkelter Hinter-
-// grund, darauf ein von unten hereinrutschendes Blatt (auf dem Handy) oder
-// zentriertes Fenster (am Desktop). Was tatsächlich im Dialog steht, geben
-// die aufrufenden Komponenten als Kinder mit, Modal kümmert sich nur um
-// Rahmen, Schließen per Escape-Taste und Schließen per Klick daneben.
+// The shared scaffolding for every dialog in the app: a dimmed backdrop
+// with a sheet sliding up from the bottom (on mobile) or a centered window
+// (on desktop). What's actually shown in the dialog is passed in as
+// children by the calling component; Modal only handles the frame,
+// closing on Escape, and closing on a backdrop click.
 export function Modal({ onClose, children }) {
   useEffect(() => {
     function handleEscape(event) {

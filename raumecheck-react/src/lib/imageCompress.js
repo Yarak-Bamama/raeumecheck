@@ -1,8 +1,8 @@
-// Verkleinert ein hochgeladenes Foto, bevor es in localStorage landet. Ein
-// Handyfoto eines Etagenplans kann mehrere Megabyte groß sein, und
-// localStorage hat pro Seite nur wenige Megabyte Platz insgesamt. Deshalb
-// wird das Bild vor dem Speichern auf eine vernünftige Kantenlänge
-// herunterskaliert und als JPEG mit moderater Qualität komprimiert.
+// Downscales an uploaded photo before it lands in localStorage. A phone
+// photo of a floor plan can be several megabytes, and localStorage only
+// allows a few megabytes total per page. The image is therefore resized to
+// a reasonable edge length and compressed as a JPEG at moderate quality
+// before being stored.
 
 export function compressImageFile(file, maxDimension = 1800, quality = 0.75) {
   return new Promise((resolve, reject) => {

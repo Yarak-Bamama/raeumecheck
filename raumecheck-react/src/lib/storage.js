@@ -1,10 +1,9 @@
-// Kapselt den gesamten Zugriff auf localStorage. Die Tischdaten liegen unter
-// einem einzigen Schlüssel als JSON, die Etagenpläne dagegen jeweils unter
-// einem eigenen Schlüssel pro Etage. Der Grund für die Trennung ist, dass ein
-// Etagenplan als Foto mehrere hundert Kilobyte groß werden kann. Würde man
-// ihn im selben JSON-Blob wie die Tischdaten speichern, müsste bei jedem
-// Tastendruck im Wizard dieses ganze Bild mit neu serialisiert werden, was
-// spürbar langsam wäre.
+// Encapsulates all access to localStorage. Desk data lives under a single
+// key as JSON, while floor plans each get their own key per floor. The
+// reason for the split is that a floor plan photo can be several hundred
+// kilobytes. Storing it in the same JSON blob as the desk data would mean
+// re-serializing that entire image on every keystroke in the wizard, which
+// would be noticeably slow.
 
 import { FLOORS } from "./floors";
 
@@ -26,8 +25,8 @@ export function loadState() {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) return defaultState();
     const parsed = JSON.parse(raw);
-    // Falls eine ältere Version weniger Felder kannte, werden fehlende
-    // Felder hier mit den Defaults aufgefüllt, statt dass die App abstürzt.
+    // If an older version had fewer fields, missing ones are backfilled
+    // with the defaults here instead of the app crashing.
     return { ...defaultState(), ...parsed };
   } catch {
     return defaultState();

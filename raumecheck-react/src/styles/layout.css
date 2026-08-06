@@ -1,5 +1,5 @@
-/* App-Leiste oben, Etagen-Anzeige/Auswahl, Marke und die Überschriften, die
-   jeder Screen oben stehen hat. */
+/* Top app bar, floor display/selector, brand, and the headings shown at
+   the top of every screen. */
 
 .app-bar {
   position: sticky;

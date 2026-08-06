@@ -2,10 +2,10 @@ import { defaultState } from "../lib/storage";
 import { addTable, deleteTable, importEntries, updateTable } from "./roomsReducer";
 import { finalizeTable, retreatToPreviousTable, startSession } from "./sessionReducer";
 
-// Der zentrale Reducer der App. Er kennt nur, wie einzelne Aktionen den
-// State verändern, und weiß nichts davon, wo diese Aktionen ausgelöst
-// werden. Die eigentliche Feldreihenfolge im Wizard steckt bewusst nicht
-// hier drin, sondern in der Wizard-Komponente selbst, siehe sessionReducer.js.
+// The app's central reducer. It only knows how individual actions change
+// the state, not where those actions originate. The actual field order in
+// the wizard deliberately isn't handled here but in the wizard component
+// itself — see sessionReducer.js.
 export function appReducer(state, action) {
   switch (action.type) {
     case "SET_CURRENT_FLOOR":

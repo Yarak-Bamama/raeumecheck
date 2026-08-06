@@ -1,10 +1,9 @@
 import { useContext } from "react";
 import { AppStateContext } from "./AppStateContext";
 
-// Der einzige Weg, wie Komponenten an den globalen State und den dispatch
-// von Aktionen herankommen. Wirft absichtlich einen Fehler, wenn jemand
-// vergisst, den AppStateProvider einzubinden, statt still mit undefined
-// weiterzumachen.
+// The only way components access the global state and the action dispatch.
+// Deliberately throws if someone forgets to mount the AppStateProvider,
+// rather than silently continuing with undefined.
 export function useAppState() {
   const context = useContext(AppStateContext);
   if (!context) {

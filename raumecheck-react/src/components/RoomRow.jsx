@@ -1,10 +1,9 @@
 import { useRef, useState } from "react";
 import { Icon } from "./icons/Icon";
 
-// Eine Zeile in der Raumliste des Start-Screens. Der Zusatzname lässt sich
-// direkt in der Zeile bearbeiten, ohne dass sich dafür ein eigener Dialog
-// öffnet, das Stiftsymbol schaltet einfach zwischen Anzeige und einem
-// Eingabefeld um.
+// A row in the room list on the start screen. The nickname can be edited
+// directly inline without opening a separate dialog — the pencil icon
+// simply toggles between display mode and an input field.
 export function RoomRow({ roomId, nickname, tableCount, isSelected, onSelect, onNicknameChange }) {
   const [isEditingNickname, setIsEditingNickname] = useState(false);
   const inputRef = useRef(null);
@@ -12,7 +11,7 @@ export function RoomRow({ roomId, nickname, tableCount, isSelected, onSelect, on
   function startEditing(event) {
     event.stopPropagation();
     setIsEditingNickname(true);
-    // Der Browser muss das Eingabefeld erst rendern, bevor man es fokussieren kann.
+    // The browser has to render the input field before it can be focused.
     requestAnimationFrame(() => inputRef.current?.select());
   }
 

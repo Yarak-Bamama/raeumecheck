@@ -4,10 +4,9 @@ import { Modal } from "../components/Modal";
 import { WizardField } from "../components/WizardField";
 import { Icon } from "../components/icons/Icon";
 
-// Zeigt dieselben acht Felder wie der Wizard, aber für einen bereits
-// bestehenden Tisch, den man nachträglich korrigieren will. Der Entwurf lebt
-// hier rein lokal in der Komponente, erst ein Klick auf Speichern schreibt
-// die Änderungen in den globalen State.
+// Shows the same eight fields as the wizard, but for an existing desk being
+// corrected after the fact. The draft lives purely locally in this
+// component — only a click on Save writes the changes to global state.
 export function EditTableModal({ table, onSave, onClose }) {
   const [draft, setDraft] = useState(table);
   const fieldRefs = useRef({});

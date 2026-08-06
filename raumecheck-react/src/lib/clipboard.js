@@ -1,8 +1,8 @@
-// Kopiert Text in die Zwischenablage. Die moderne Clipboard-API braucht
-// einen sicheren Kontext (https oder localhost) und eine Nutzererlaubnis,
-// die nicht überall gegeben ist, etwa wenn die App als lokale Datei über
-// file:// geöffnet wird. Für diesen Fall gibt es einen Rückfallweg über ein
-// unsichtbares Textfeld und das ältere execCommand("copy").
+// Copies text to the clipboard. The modern Clipboard API requires a secure
+// context (https or localhost) and user permission, which isn't always
+// available — for instance when the app is opened as a local file via
+// file://. For that case there's a fallback using a hidden textarea and the
+// older execCommand("copy").
 
 export function copyToClipboard(text) {
   if (navigator.clipboard?.writeText && window.isSecureContext) {

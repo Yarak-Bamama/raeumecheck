@@ -1,8 +1,8 @@
-// Rohdaten für alle Strich-Icons der App. Jeder Eintrag beschreibt nur die
-// Form innerhalb des SVGs (Pfade, Rechtecke, Kreise), nicht das umschließende
-// svg-Element selbst, denn das übernimmt einheitlich die Icon-Komponente.
-// So bleiben Größe, Strichstärke und Farbgebung an einer einzigen Stelle
-// steuerbar, egal welches Icon gerade dargestellt wird.
+// Raw data for all of the app's line icons. Each entry only describes the
+// shape inside the SVG (paths, rects, circles), not the enclosing svg
+// element itself — the Icon component handles that uniformly. This keeps
+// size, stroke width, and color controllable from a single place,
+// regardless of which icon is being rendered.
 
 export const ICONS = {
   home: {

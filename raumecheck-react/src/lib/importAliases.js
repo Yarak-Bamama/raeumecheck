@@ -1,10 +1,9 @@
-// Damit der Import auch dann funktioniert, wenn die Kopfzeile in der
-// hochgeladenen Datei nicht exakt so heißt wie unser eigener Export
-// ("Stehtisch-Nr (STXXXX)" statt "Tisch-Nr" zum Beispiel), wird jede Spalte
-// gegen eine Liste möglicher Bezeichnungen geprüft. Die Erkennung sucht
-// diese Begriffe als Teilstring in der normalisierten Kopfzeile, nicht als
-// exakte Übereinstimmung, damit auch Zusätze wie Klammern oder Einheiten
-// die Zuordnung nicht verhindern.
+// So import still works when the header row in the uploaded file doesn't
+// exactly match our own export ("Stehtisch-Nr (STXXXX)" instead of
+// "Tisch-Nr", for example), each column is checked against a list of
+// possible labels. Matching looks for these terms as a substring within the
+// normalized header cell, not as an exact match, so extras like parentheses
+// or units don't prevent a match.
 
 export const IMPORT_FIELD_ORDER = [
   "room",

@@ -1,7 +1,6 @@
-// Beschreibt die acht Felder, die pro Tisch im Wizard abgefragt werden, und
-// zwar genau in der Reihenfolge, in der sie ausgefüllt werden. Wizard und
-// Bearbeiten-Dialog greifen beide auf diese eine Liste zurück, damit sich
-// Reihenfolge und Beschriftungen nie auseinanderentwickeln können.
+// Describes the eight fields captured per desk in the wizard, in the exact
+// order they're filled in. The wizard and the edit dialog both read from
+// this single list so the field order and labels can never drift apart.
 
 export const FIELD_META = [
   {

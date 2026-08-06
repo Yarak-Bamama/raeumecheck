@@ -5,12 +5,11 @@ import { useToast } from "../components/toast/useToast";
 
 export const AppStateContext = createContext(null);
 
-// Hält den gesamten fachlichen Zustand der App (Räume, Tische, Session,
-// gewählte Etage) und schreibt ihn bei jeder Änderung mit einer kleinen
-// Verzögerung nach localStorage. Die Verzögerung verhindert, dass bei
-// jedem einzelnen Tastendruck im Wizard sofort geschrieben wird, ohne dass
-// dabei nennenswert Daten verloren gehen könnten, falls die Seite doch
-// einmal mitten im Tippen neu geladen wird.
+// Holds the app's entire domain state (rooms, desks, session, selected
+// floor) and writes it to localStorage on every change, after a short
+// debounce. The debounce prevents a write on every single keystroke in the
+// wizard, without risking meaningful data loss if the page happens to
+// reload mid-keystroke.
 export function AppStateProvider({ children }) {
   const [state, dispatch] = useReducer(appReducer, undefined, loadState);
   const toast = useToast();

@@ -2,9 +2,8 @@ import { FLOORS } from "../lib/floors";
 import { Modal } from "../components/Modal";
 import { Icon } from "../components/icons/Icon";
 
-// Zeigt vor dem eigentlichen Import eine Zusammenfassung, damit man sieht,
-// ob die Datei überhaupt richtig gelesen wurde, bevor irgendetwas an den
-// bestehenden Daten verändert wird.
+// Shows a summary before the actual import, so the user can confirm the
+// file was read correctly before anything in the existing data changes.
 export function ImportPreviewModal({ result, fileName, onConfirm, onClose }) {
   const roomCount = new Set(result.entries.map((entry) => entry.roomId)).size;
 

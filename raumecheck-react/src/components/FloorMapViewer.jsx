@@ -4,12 +4,12 @@ import { getFloorMap, setFloorMap } from "../lib/storage";
 import { useToast } from "./toast/useToast";
 import { Icon } from "./icons/Icon";
 
-// Vollbild-Ansicht des Etagenplans. Ist noch kein Plan für die Etage
-// hinterlegt, zeigt sie stattdessen eine Aufforderung, ein Foto hochzuladen.
-// Das Foto wird vor dem Speichern verkleinert, weil localStorage insgesamt
-// nur wenige Megabyte pro Seite erlaubt und ein Handyfoto das leicht
-// sprengen würde. Ein Klick auf das Bild vergrößert es, damit man auch auf
-// dem Handy Details lesen kann, ohne dass die Seite selbst zoombar sein muss.
+// Full-screen view of the floor plan. If no plan is stored for the floor
+// yet, it shows a prompt to upload a photo instead. The photo is downscaled
+// before saving, since localStorage only allows a few megabytes total per
+// page and a phone photo would easily exceed that. Clicking the image
+// zooms it in, so details are readable on a phone without the page itself
+// needing to be zoomable.
 export function FloorMapViewer({ floor, onClose }) {
   const [imageUrl, setImageUrl] = useState(() => getFloorMap(floor));
   const [isZoomed, setIsZoomed] = useState(false);

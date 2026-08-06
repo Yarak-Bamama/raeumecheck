@@ -1,9 +1,8 @@
 import { useContext } from "react";
 import { ToastContext } from "./ToastContext";
 
-// Gibt eine kleine API zurück, mit der jede Komponente eine Meldung
-// einblenden kann, ohne selbst wissen zu müssen, wie die Toast-Liste
-// intern verwaltet wird.
+// Returns a small API that lets any component show a message without
+// needing to know how the toast list is managed internally.
 export function useToast() {
   const context = useContext(ToastContext);
   if (!context) {

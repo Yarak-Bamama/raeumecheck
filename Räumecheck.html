@@ -7,7 +7,7 @@
 <title>Räumecheck – Ausstattungskontrolle</title>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0yIC0yIDE0NSAxMjYiPjxwb2x5Z29uIGZpbGw9IiNmY2MwMTAiIHBvaW50cz0iMzUuMiwtMC4xIC0wLjMsNjEuMyAzNS4yLDEyMi42IDEwNiwxMjIuNiAxNDEuNSw2MS4zIDEwNiwtMC4xIi8+PHBhdGggZmlsbD0iIzIzMjMyMyIgZD0iTTgwLjksODMuNUg2MC40Yy0xLjYsMC0zLjEtMC45LTMuOS0yLjNMNDYuMiw2My41Yy0wLjgtMS40LTAuOC0zLjEsMC00LjVsMTAuMi0xNy43YzAuOC0xLjQsMi4zLTIuMywzLjktMi4zaDIwLjVjMS42LDAsMy4xLDAuOSwzLjksMi4zTDk1LDU5YzAuOCwxLjQsMC44LDMuMSwwLDQuNUw4NC44LDgxLjNDODQsODIuNyw4Mi41LDgzLjUsODAuOSw4My41eiBNNjMsNzQuNWgxNS4zbDcuNi0xMy4yTDc4LjMsNDhINjNsLTcuNiwxMy4yTDYzLDc0LjV6Ii8+PHBhdGggZmlsbD0iIzIzMjMyMyIgZD0iTTMzLjQsODguMWMtMS42LDAtMy4xLTAuOC0zLjktMi4zTDE2LjYsNjMuNWMtMC44LTEuNC0wLjgtMy4xLDAtNC41bDI1LjEtNDMuNWMwLjgtMS40LDIuMy0yLjMsMy45LTIuM2g0Ny44YzIuNSwwLDQuNSwyLDQuNSw0LjVzLTIsNC41LTQuNSw0LjVINDguMWwtMjIuNSwzOWwxMS42LDIwLjFjMS4yLDIuMiwwLjUsNC45LTEuNyw2LjFDMzQuOSw4Ny45LDM0LjEsODguMSwzMy40LDg4LjF6Ii8+PHBhdGggZmlsbD0iIzIzMjMyMyIgZD0iTTk1LjcsMTA5LjFINDcuOWMtMi41LDAtNC41LTItNC41LTQuNXMyLTQuNSw0LjUtNC41aDQ1LjJsMjIuNS0zOC45bC0xMS40LTE5LjdjLTEuMi0yLjItMC41LTQuOSwxLjYtNi4xYzIuMi0xLjIsNC45LTAuNSw2LjEsMS42bDEyLjcsMjJjMC44LDEuNCwwLjgsMy4xLDAsNC41bC0yNS4xLDQzLjRDOTguOCwxMDguMyw5Ny4zLDEwOS4xLDk1LjcsMTA5LjF6Ii8+PC9zdmc+">
 <style>
-/* ---------- Design tokens ---------- */
+/* Design tokens */
 :root{
   --bg:#f2f2f2;
   --surface:#ffffff;
@@ -89,7 +89,7 @@ input,textarea,select{font-family:inherit}
 :focus{outline:none}
 :focus-visible{outline:2.5px solid var(--primary);outline-offset:2px}
 
-/* ---------- App shell ---------- */
+/* App shell */
 #app{min-height:100%;display:flex;flex-direction:column}
 
 .app-bar{
@@ -125,7 +125,7 @@ input,textarea,select{font-family:inherit}
 
 main{flex:1;display:flex;flex-direction:column;padding:16px 16px calc(env(safe-area-inset-bottom,0px) + 28px);max-width:720px;margin:0 auto;width:100%}
 
-/* ---------- Buttons ---------- */
+/* Buttons */
 .btn{
   appearance:none;border:1.5px solid var(--border-strong);cursor:pointer;
   display:inline-flex;align-items:center;justify-content:center;gap:7px;
@@ -152,7 +152,7 @@ main{flex:1;display:flex;flex-direction:column;padding:16px 16px calc(env(safe-a
 .btn-block{width:100%}
 .btn-lg{min-height:52px;font-size:14.5px;padding:13px 20px}
 
-/* ---------- Layout primitives ---------- */
+/* Layout primitives */
 .screen{animation:screenIn .22s var(--ease-out)}
 @keyframes screenIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
 
@@ -169,7 +169,7 @@ main{flex:1;display:flex;flex-direction:column;padding:16px 16px calc(env(safe-a
 .page-sub{font-size:13.5px;color:var(--text-muted);margin-bottom:18px;line-height:1.5;font-family:var(--font-mono)}
 .section-label{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-faint);margin:0 0 10px 2px;font-family:var(--font-mono)}
 
-/* ---------- Fields ---------- */
+/* Fields */
 .field{margin-bottom:16px}
 .field-label{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:7px;padding:0 1px}
 .field-label__text{font-size:13.5px;font-weight:700;color:var(--text);letter-spacing:0}
@@ -196,7 +196,7 @@ main{flex:1;display:flex;flex-direction:column;padding:16px 16px calc(env(safe-a
 .toggle-btn.is-yes.is-selected{background:var(--success);border-color:var(--success);color:#fff}
 .toggle-btn.is-no.is-selected{background:var(--surface);border-color:var(--text);color:var(--text)}
 
-/* ---------- Setup: room picker ---------- */
+/* Setup: room picker */
 .search-wrap{position:relative;margin-bottom:12px}
 .search-wrap .input{padding-left:38px}
 .search-icon{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:var(--text-faint);pointer-events:none}
@@ -222,7 +222,7 @@ main{flex:1;display:flex;flex-direction:column;padding:16px 16px calc(env(safe-a
 .stepper-btn:active{transform:scale(.97)}
 .field-num .input{text-align:center;font-weight:700;font-size:17px}
 
-/* ---------- Wizard ---------- */
+/* Wizard */
 .progress-track{display:flex;gap:6px;overflow-x:auto;padding:4px 2px 14px;scrollbar-width:none}
 .progress-track::-webkit-scrollbar{display:none}
 .progress-dot{
@@ -241,7 +241,7 @@ main{flex:1;display:flex;flex-direction:column;padding:16px 16px calc(env(safe-a
 .wizard-footer{display:flex;gap:10px;margin-top:6px;position:sticky;bottom:calc(env(safe-area-inset-bottom,0px) + 12px)}
 .wizard-footer .btn-primary{flex:1}
 
-/* ---------- Room overview ---------- */
+/* Room overview */
 .entry-card{background:var(--surface);border:1.5px solid var(--border-strong);border-radius:var(--radius);padding:14px 14px;margin-bottom:10px;box-shadow:var(--shadow-sm)}
 .entry-card__top{display:flex;align-items:center;justify-content:space-between;margin-bottom:9px}
 .entry-card__title{display:flex;align-items:center;gap:8px}
@@ -260,7 +260,7 @@ main{flex:1;display:flex;flex-direction:column;padding:16px 16px calc(env(safe-a
 .empty-state__icon{margin-bottom:10px;opacity:.5;display:flex;justify-content:center}
 .empty-state p{font-size:13.5px;line-height:1.5}
 
-/* ---------- Global overview ---------- */
+/* Global overview */
 .stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px}
 .stat-tile{background:var(--surface);border:1.5px solid var(--border-strong);border-radius:var(--radius);padding:14px 10px;text-align:center;box-shadow:var(--shadow-sm)}
 .stat-tile__num{font-size:22px;font-weight:800;letter-spacing:-.01em;font-variant-numeric:tabular-nums;font-family:var(--font-mono)}
@@ -288,7 +288,7 @@ main{flex:1;display:flex;flex-direction:column;padding:16px 16px calc(env(safe-a
 .action-grid .btn{grid-column:span 1}
 .action-grid .btn.full{grid-column:span 2}
 
-/* ---------- Toast ---------- */
+/* Toast */
 #toast-host{position:fixed;left:0;right:0;bottom:calc(env(safe-area-inset-bottom,0px) + 18px);display:flex;flex-direction:column;align-items:center;gap:8px;z-index:100;pointer-events:none;padding:0 16px}
 .toast{
   pointer-events:auto;max-width:480px;width:100%;
@@ -305,7 +305,7 @@ main{flex:1;display:flex;flex-direction:column;padding:16px 16px calc(env(safe-a
 @keyframes toastOut{to{opacity:0;transform:translateY(6px)}}
 .toast__icon{display:flex;flex:none}
 
-/* ---------- Modal ---------- */
+/* Modal */
 .modal-overlay{
   position:fixed;inset:0;background:rgba(10,10,8,.55);
   display:flex;align-items:flex-end;justify-content:center;z-index:80;
@@ -331,7 +331,7 @@ main{flex:1;display:flex;flex-direction:column;padding:16px 16px calc(env(safe-a
 
 .app-footer{text-align:center;font-size:10.5px;color:var(--text-faint);padding:22px 16px 8px;font-family:var(--font-mono)}
 
-/* ---------- Etagenplan viewer ---------- */
+/* Floor plan viewer */
 .map-overlay{
   position:fixed;inset:0;z-index:90;background:var(--bg);
   display:flex;flex-direction:column;animation:overlayIn .18s var(--ease);
@@ -388,7 +388,7 @@ var o=[];var l=Array.isArray(e);for(f=n.s.c;f<=n.e.c;++f)s[f]=ya(f);for(var c=n.
 (function(){
 "use strict";
 
-/* ================= Konstanten ================= */
+/* Constants */
 var STORAGE_KEY = "raumcheck_data_v1";
 var MAP_KEY_PREFIX = "raumcheck_map_";
 var FLOORS = ["M","1","2","4"];
@@ -411,7 +411,7 @@ var FIELD_KEYS = FIELD_META.map(function(f){return f.key;});
 var TSV_HEADER_ORDER = ["room","tischNr","laptopNr","monitor1","monitor2","monitor3","dockingNr","geprueftText","anmerkungen"];
 var XLSX_HEADER = ["Raumnummer","Tisch-Nr","Laptop-Nr","Monitor1-Nr","Monitor2-Nr","Monitor3-Nr","Dockingstation-Nr","Geprüft?","Anmerkungen"];
 
-/* ================= State ================= */
+/* State */
 var state = loadState();
 var uidCounter = state.__nextId || 1;
 
@@ -468,7 +468,7 @@ function roomLabel(roomId){
   return nick ? roomId+" – "+nick : roomId;
 }
 
-/* ================= Routing / render ================= */
+/* Routing / render */
 var app = document.getElementById("app");
 var view = {screen:"setup"};
 
@@ -524,7 +524,7 @@ function renderAppBar(){
     '<div class="app-bar__actions">'+mapBtn+overviewBtn+'</div>';
 }
 
-/* Großer, gut antippbarer Etagen-Umschalter für Setup & Gesamtübersicht */
+/* Large, easily tappable floor switcher for the setup and global-overview screens */
 function renderFloorPicker(){
   return '<div class="floor-picker" data-floor-picker>'+FLOORS.map(function(f){
     return '<button type="button" class="floor-picker-btn'+(f===state.currentFloor?" is-active":"")+'" data-floor="'+f+'">'+
@@ -556,7 +556,7 @@ function afterRender(){
   app.querySelectorAll('[data-action="map"]').forEach(function(b){b.addEventListener("click",function(){openMapViewer(effectiveFloor());});});
 }
 
-/* ================= Icons (inline svg, currentColor) ================= */
+/* Icons (inline svg, currentColor) */
 function iconHome(){return '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11.5 12 4l9 7.5"/><path d="M5 10v9.5a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1V10"/></svg>';}
 function iconGrid(){return '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>';}
 function iconEdit(){return '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>';}
@@ -575,7 +575,7 @@ function iconMap(){return '<svg width="18" height="18" viewBox="0 0 24 24" fill=
 function iconUpload(){return '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V9"/><path d="m7 14 5-5 5 5"/><path d="M5 21h14"/></svg>';}
 function rubiconLogoSvg(){return '<svg class="brand-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 651.5 122.3"><path d="M195.7,68.6V101h-13.5V21.2h30.8c16.5,0,27.1,8.3,27.1,23.9c0,13.4-7.8,21-20.4,23l23.1,32.9h-15.3l-22.2-32.3L195.7,68.6L195.7,68.6z M195.7,57.3h17c9,0,14-4.8,14-12.2s-5.1-12.2-14-12.2h-17V57.3z"/><path d="M252.3,69.2V21.2h13.5v46.5c0,15.3,6.5,22.5,18.4,22.5s18.4-7.1,18.4-22.5V21.2h13.5v48.1c0,21.8-12.9,33-32,33C265.3,102.3,252.3,91.1,252.3,69.2z"/><path d="M390.6,78.1c0,14.9-10.4,22.9-27,22.9H333V21.2h27.9c16.6,0,27,7.4,27,21.7c0,8.6-4.5,14.8-10.4,16.9C385.1,62.3,390.6,69.7,390.6,78.1z M360.8,54.7c9.2,0,14.2-3.5,14.2-11s-4.9-10.8-14.2-10.8h-14.7v21.8H360.8z M346.1,89.3h17.1c9.1,0,14-4.5,14-11.7c0-7.3-4.9-11.7-14-11.7h-17.1V89.3z"/><path d="M418.2,101h-13.5V21.2h13.5V101z"/><path d="M470.3,19.9c9,0,16,2.6,21.2,6.9v14c-6.4-6-12.9-8.8-21-8.8c-15.2,0-25.1,11.9-25.1,29.1c0,17,9.9,29,25.1,29c8.2,0,14.7-2.7,21-8.7v14c-5.2,4.3-12.2,6.9-21.2,6.9c-22.2,0-38.6-16.6-38.6-41.2C431.7,36.6,448.1,19.9,470.3,19.9z"/><path d="M537.3,102.3c-21.6,0-36.8-17.4-36.8-41.2c0-23.9,15.2-41.2,36.8-41.2c21.6,0,36.9,17.3,36.9,41.2C574.2,84.9,558.9,102.3,537.3,102.3z M537.3,32c-14,0-23.1,12.2-23.1,29.1s9.1,29.1,23.1,29.1c14,0,23.2-12.2,23.2-29.1S551.3,32,537.3,32z"/><path d="M651.9,101h-10.4l-40.8-58.1V101h-13V21.2h12.7l38.4,55.3V21.2h13V101z"/><polygon class="st0" points="35.2,-0.1 -0.3,61.3 35.2,122.6 106,122.6 141.5,61.3 106,-0.1"/><path d="M80.9,83.5H60.4c-1.6,0-3.1-0.9-3.9-2.3L46.2,63.5c-0.8-1.4-0.8-3.1,0-4.5l10.2-17.7c0.8-1.4,2.3-2.3,3.9-2.3h20.5c1.6,0,3.1,0.9,3.9,2.3L95,59c0.8,1.4,0.8,3.1,0,4.5L84.8,81.3C84,82.7,82.5,83.5,80.9,83.5z M63,74.5h15.3l7.6-13.2L78.3,48H63l-7.6,13.2L63,74.5z"/><path d="M33.4,88.1c-1.6,0-3.1-0.8-3.9-2.3L16.6,63.5c-0.8-1.4-0.8-3.1,0-4.5l25.1-43.5c0.8-1.4,2.3-2.3,3.9-2.3h47.8c2.5,0,4.5,2,4.5,4.5s-2,4.5-4.5,4.5H48.1l-22.5,39l11.6,20.1c1.2,2.2,0.5,4.9-1.7,6.1C34.9,87.9,34.1,88.1,33.4,88.1z"/><path d="M95.7,109.1H47.9c-2.5,0-4.5-2-4.5-4.5s2-4.5,4.5-4.5h45.2l22.5-38.9l-11.4-19.7c-1.2-2.2-0.5-4.9,1.6-6.1c2.2-1.2,4.9-0.5,6.1,1.6l12.7,22c0.8,1.4,0.8,3.1,0,4.5l-25.1,43.4C98.8,108.3,97.3,109.1,95.7,109.1z"/></svg>';}
 
-/* ================= Helpers ================= */
+/* Helpers */
 function esc(s){
   return String(s==null?"":s).replace(/[&<>"']/g,function(c){
     return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];
@@ -650,7 +650,7 @@ function closeModal(){
   document.removeEventListener("keydown", modalEscHandler);
 }
 
-/* ================= Etagenplan (Floor Map) ================= */
+/* Floor plan */
 function compressImageFile(file, maxDim, quality, cb){
   var reader = new FileReader();
   reader.onload = function(e){
@@ -725,7 +725,7 @@ function closeMapViewer(){
   document.removeEventListener("keydown", mapEscHandler);
 }
 
-/* ================= SETUP SCREEN ================= */
+/* Setup screen */
 var setupSel = {roomId:null, filter:"", count:5};
 
 function renderSetup(){
@@ -850,7 +850,7 @@ function startWizardSession(){
   go("wizard");
 }
 
-/* ================= WIZARD SCREEN ================= */
+/* Wizard screen */
 function renderWizard(){
   var s = state.session;
   if(!s){ return renderSetup(); }
@@ -1021,10 +1021,11 @@ function jumpToTable(idx){
   var s = state.session; if(!s) return;
   var room = getRoom(s.roomId);
   if(idx < s.completedCount){
-    // pull that already-saved table back into the draft for editing, shift later ones? Simpler: edit in place via overview instead.
+    // Pull the selected already-completed table back into the draft so it can be corrected.
     var t = room.tables[room.tables.length - s.completedCount + idx];
     if(t){
-      // load its values as draft, remove it from saved list, decrement completedCount to idx, subsequent will be re-appended in order as user moves forward again
+      // Remove it from the saved list; completedCount drops to idx, and later tables are
+      // re-appended in order as the user moves forward again.
       var removed = room.tables.splice(room.tables.length - s.completedCount + idx, 1)[0];
       s.completedCount = idx;
       s.draft = {tischNr:removed.tischNr,laptopNr:removed.laptopNr,monitor1:removed.monitor1,monitor2:removed.monitor2,monitor3:removed.monitor3,dockingNr:removed.dockingNr,geprueft:removed.geprueft,anmerkungen:removed.anmerkungen};
@@ -1063,7 +1064,7 @@ function cancelWizard(){
   }
 }
 
-/* ================= ROOM OVERVIEW ================= */
+/* Room overview */
 function renderRoomOverview(roomId){
   var tables = roomTables(roomId);
   var copiedAt = state.copiedAt[roomId];
@@ -1245,7 +1246,7 @@ function showFinishResult(roomId, text, ok){
   );
 }
 
-/* ================= GLOBAL OVERVIEW ================= */
+/* Global overview */
 function knownAndExtraRoomIds(){
   var seen = Object.create(null);
   var out = [];
@@ -1380,7 +1381,7 @@ function exportXLSX(){
   toast("Excel-Datei wird heruntergeladen.","download");
 }
 
-/* ================= Excel-Import ================= */
+/* Excel import */
 var IMPORT_FIELD_ORDER = ["room","tischNr","laptopNr","monitor1","monitor2","monitor3","dockingNr","geprueft","anmerkungen"];
 var IMPORT_FIELD_ALIASES = {
   room:        ["raumnummer","raum","raumnr","room","zimmer","zimmernummer"],
@@ -1553,7 +1554,7 @@ function confirmReset(){
   );
 }
 
-/* ================= Init ================= */
+/* Init */
 render();
 })();
 </script>

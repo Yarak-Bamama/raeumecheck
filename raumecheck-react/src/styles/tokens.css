@@ -1,6 +1,6 @@
-/* Design-Tokens: Farben, Radien, Schatten, Schriften. Hell/Dunkel wird rein
-   über CSS-Variablen gesteuert, damit der Rest des Stylesheets nichts vom
-   jeweiligen Farbschema wissen muss. */
+/* Design tokens: colors, radii, shadows, fonts. Light/dark mode is
+   controlled purely through CSS variables, so the rest of the stylesheet
+   doesn't need to know about the active color scheme. */
 
 :root {
   --bg: #f2f2f2;

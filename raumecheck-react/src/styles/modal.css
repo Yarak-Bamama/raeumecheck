@@ -1,5 +1,5 @@
-/* Das Grundgerüst für alle Dialoge (Bearbeiten, Löschen bestätigen,
-   Import-Vorschau und so weiter). */
+/* The shared scaffolding for all dialogs (edit, confirm delete,
+   import preview, etc.). */
 
 .modal-overlay {
   position: fixed;

@@ -1,39 +1,39 @@
 # Räumecheck (React)
 
-Dieselbe Ausstattungskontroll-App wie `../Räumecheck.html`, hier aber als React-Projekt mit sauber getrennten Dateien statt einer einzigen großen HTML-Datei. Gedacht für die aktive Weiterentwicklung mit Live-Reload.
+Same room-inspection app as `../Räumecheck.html`, rebuilt as a React project with cleanly separated files instead of one large HTML file. Meant for active development with live reload.
 
-## Voraussetzungen
+## Requirements
 
-Node.js (LTS) muss installiert sein.
+Node.js (LTS) must be installed.
 
-## Entwickeln
+## Development
 
 ```
 npm install
 npm run dev
 ```
 
-Öffnet einen lokalen Server (Standard: `http://localhost:5173`), der bei jeder gespeicherten Änderung sofort im Browser aktualisiert.
+Opens a local server (default: `http://localhost:5173`) that reloads the browser on every saved change.
 
-## Bauen
+## Build
 
 ```
 npm run build
 ```
 
-Erzeugt eine fertige, statische Version im Ordner `dist/`, die sich auf einem beliebigen Webserver hosten lässt.
+Produces a static production build in the `dist/` folder, deployable on any web server.
 
-## Projektstruktur
+## Project structure
 
-- `src/lib/` – reine Hilfsfunktionen ohne React-Bezug: Etagen/Raumnummern, Feldbeschreibungen, TSV/Excel-Import und -Export, Bildkomprimierung für Etagenpläne.
-- `src/state/` – der zentrale App-State (Reducer, Context, abgeleitete Werte) und dessen Speicherung in localStorage.
-- `src/components/` – wiederverwendbare Bausteine wie App-Leiste, Etagen-Auswahl, Dialog-Grundgerüst, Icons.
-- `src/screens/` – die vier Hauptansichten: Start, Wizard, Raumübersicht, Gesamtübersicht.
-- `src/modals/` – die einzelnen Dialoge (Bearbeiten, Löschen bestätigen, Import-Vorschau und so weiter).
-- `src/styles/` – das Stylesheet, aufgeteilt nach Themenbereich statt einer einzigen CSS-Datei.
+- `src/lib/` – plain helper functions with no React dependency: floor/room numbers, field definitions, TSV/Excel import and export, image compression for floor plans.
+- `src/state/` – the central app state (reducer, context, derived values) and its persistence to localStorage.
+- `src/components/` – reusable building blocks such as the app bar, floor picker, dialog scaffolding, icons.
+- `src/screens/` – the four main views: start, wizard, room overview, global overview.
+- `src/modals/` – the individual dialogs (edit, confirm delete, import preview, etc.).
+- `src/styles/` – the stylesheet, split by topic instead of a single CSS file.
 
-## Unterschiede zur HTML-Version
+## Differences from the HTML version
 
-Ein paar kleine, bewusste Vereinfachungen gegenüber `Räumecheck.html`:
+A few small, deliberate simplifications compared to `Räumecheck.html`:
 
-- Die Fortschrittspunkte im Wizard lassen sich nicht mehr anklicken, um zu einem beliebigen, schon abgeschlossenen Tisch zurückzuspringen. Das war in der alten Version fehleranfällig, wenn man mehr als einen Tisch zurückgesprungen ist. Korrekturen an bereits abgeschlossenen Tischen laufen jetzt über den Bearbeiten-Dialog in der Raumübersicht, der "Zurück"-Knopf im Wizard springt weiterhin zum unmittelbar vorherigen Tisch.
+- The wizard's progress dots can no longer be clicked to jump back to an arbitrary, already-completed desk. That behavior was error-prone in the old version when jumping back more than one desk. Corrections to already-completed desks now go through the edit dialog in the room overview; the "Back" button in the wizard still jumps to the immediately preceding desk.

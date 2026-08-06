@@ -1,5 +1,5 @@
-/* Die Tisch-Karten in der Raumübersicht, der Geprüft/Offen-Status und der
-   Leerzustand, wenn ein Raum noch keine Einträge hat. */
+/* The desk cards in the room overview, the checked/open status, and the
+   empty state shown when a room has no entries yet. */
 
 .entry-card {
   background: var(--surface);

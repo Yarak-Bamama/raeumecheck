@@ -9,9 +9,9 @@ const ICON_BY_TYPE = {
   ok: "check",
 };
 
-// Zeigt die aktuell aktiven Toasts unten auf dem Bildschirm an. Die
-// Provider-Komponente entscheidet, wann ein Toast erscheint und wieder
-// verschwindet, diese Komponente kümmert sich nur um die Darstellung.
+// Renders the currently active toasts at the bottom of the screen. The
+// provider component decides when a toast appears and disappears; this
+// component only handles the presentation.
 export function ToastHost() {
   const { toasts } = useContext(ToastContext);
 

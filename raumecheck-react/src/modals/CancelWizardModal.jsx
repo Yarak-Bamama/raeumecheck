@@ -1,8 +1,8 @@
 import { Modal } from "../components/Modal";
 
-// Erscheint nur, wenn im aktuell offenen Tisch schon irgendwo Text steht,
-// der beim Abbrechen verloren ginge. Bereits abgeschlossene Tische derselben
-// Session sind davon nicht betroffen, die bleiben so oder so erhalten.
+// Only appears if the currently open desk already has some text entered
+// that would be lost on cancel. Already-completed desks in the same
+// session are unaffected — those are kept either way.
 export function CancelWizardModal({ onStay, onLeave }) {
   return (
     <Modal onClose={onStay}>

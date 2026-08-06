@@ -1,10 +1,9 @@
 import { Icon } from "./icons/Icon";
 
-// Stellt eines der acht Tisch-Felder dar, egal ob im Wizard oder im
-// Bearbeiten-Dialog. registerRef merkt sich das fokussierbare Element pro
-// Feld, damit die aufrufende Komponente per Tastatur gezielt zum nächsten
-// oder vorherigen Feld springen kann, so wie es "Enter springt weiter"
-// verlangt.
+// Renders one of the eight desk fields, whether in the wizard or the edit
+// dialog. registerRef keeps track of the focusable element per field, so
+// the calling component can jump to the next or previous field via
+// keyboard, as required by the "Enter advances" behavior.
 export function WizardField({ field, value, isActive, registerRef, onChangeValue, onFocusField, onAdvance }) {
   const label = (
     <div className="field-label">

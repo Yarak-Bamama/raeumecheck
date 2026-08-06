@@ -8,12 +8,12 @@ import { WizardScreen } from "./screens/WizardScreen";
 import { RoomOverviewScreen } from "./screens/RoomOverviewScreen";
 import { GlobalScreen } from "./screens/GlobalScreen";
 
-// Welcher Screen gerade zu sehen ist, steht bewusst nicht im globalen State,
-// sondern lokal hier, denn es ist reine Navigation und muss nicht in
-// localStorage landen. Läuft dagegen gerade ein Rundgang (state.session ist
-// gesetzt), soll man immer auf dem Wizard landen, auch nach einem Reload,
-// damit unterwegs eingegebene Daten nicht durch versehentliches Wegnavigieren
-// verloren gehen.
+// Which screen is currently shown deliberately isn't stored in global
+// state but kept locally here, since it's pure navigation and doesn't need
+// to land in localStorage. If an inspection round is in progress, though
+// (state.session is set), the user should always land on the wizard, even
+// after a reload, so that data entered mid-round isn't lost through
+// accidental navigation.
 export default function App() {
   const { state } = useAppState();
   const [view, setView] = useState({ screen: "setup" });

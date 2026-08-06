@@ -1,5 +1,5 @@
-/* Die kurzen Rückmeldungen unten am Bildschirmrand, zum Beispiel
-   "Tisch gespeichert". */
+/* The brief feedback messages at the bottom of the screen, e.g.
+   "Desk saved". */
 
 #toast-host {
   position: fixed;

@@ -1,5 +1,4 @@
-/* Statistik-Kacheln, Fortschrittsbalken und das Raum-Raster der
-   Gesamtübersicht. */
+/* Stat tiles, progress bar, and the room grid in the global overview. */
 
 .stat-row {
   display: grid;
