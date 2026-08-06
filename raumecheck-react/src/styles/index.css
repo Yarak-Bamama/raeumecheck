@@ -1,0 +1,13 @@
+/* Sammelt alle Stylesheets der App an einer Stelle. Die Reihenfolge ist
+   bewusst so gewählt, dass allgemeinere Regeln vor spezifischeren stehen. */
+
+@import "./tokens.css";
+@import "./base.css";
+@import "./layout.css";
+@import "./setup.css";
+@import "./wizard.css";
+@import "./roomOverview.css";
+@import "./global.css";
+@import "./toast.css";
+@import "./modal.css";
+@import "./mapViewer.css";

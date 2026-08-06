@@ -1,0 +1,272 @@
+/* Grundreset, App-Rahmen und die überall wiederverwendeten Bausteine:
+   Buttons, Textfelder und die Ja/Nein-Umschalter. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overscroll-behavior-y: none;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+button {
+  font-family: inherit;
+  color: inherit;
+}
+input,
+textarea,
+select {
+  font-family: inherit;
+}
+::selection {
+  background: var(--primary);
+  color: var(--primary-contrast);
+}
+
+:focus {
+  outline: none;
+}
+:focus-visible {
+  outline: 2.5px solid var(--primary);
+  outline-offset: 2px;
+}
+
+#app {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 16px calc(env(safe-area-inset-bottom, 0px) + 28px);
+  max-width: 720px;
+  margin: 0 auto;
+  width: 100%;
+}
+.screen {
+  animation: screenIn 0.22s var(--ease-out);
+}
+@keyframes screenIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  background: var(--surface);
+  border: 1.5px solid var(--border-strong);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+.card-pad {
+  padding: 18px;
+}
+
+/* Buttons */
+.btn {
+  appearance: none;
+  border: 1.5px solid var(--border-strong);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 11px 16px;
+  border-radius: var(--radius);
+  min-height: 44px;
+  transition:
+    transform 0.12s var(--ease),
+    background-color 0.15s var(--ease),
+    border-color 0.15s var(--ease),
+    color 0.15s var(--ease),
+    box-shadow 0.15s var(--ease);
+  -webkit-tap-highlight-color: transparent;
+}
+.btn:active {
+  transform: scale(0.96);
+}
+.btn[disabled] {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.btn-primary {
+  background: var(--primary);
+  color: var(--primary-contrast);
+  border-color: var(--primary);
+}
+.btn-primary:hover {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+.btn-secondary {
+  background: var(--surface);
+  color: var(--text);
+  border-color: var(--border-strong);
+}
+.btn-secondary:hover {
+  background: var(--surface-2);
+  border-color: var(--text);
+}
+.btn-ghost {
+  background: transparent;
+  color: var(--text-muted);
+  border-color: transparent;
+}
+.btn-ghost:hover {
+  background: var(--surface-2);
+  color: var(--text);
+}
+.btn-danger {
+  background: var(--danger-soft);
+  color: var(--danger);
+  border-color: var(--danger-soft);
+}
+.btn-danger:hover {
+  background: var(--danger);
+  color: #fff;
+  border-color: var(--danger);
+}
+.btn-danger-solid {
+  background: var(--danger);
+  color: #fff;
+  border-color: var(--danger);
+}
+.btn-danger-solid:hover {
+  background: var(--danger-hover);
+  border-color: var(--danger-hover);
+}
+.btn-icon {
+  padding: 8px;
+  min-width: 36px;
+  min-height: 36px;
+  border-radius: var(--radius-sm);
+}
+.btn-block {
+  width: 100%;
+}
+.btn-lg {
+  min-height: 52px;
+  font-size: 14.5px;
+  padding: 13px 20px;
+}
+
+/* Textfelder */
+.field {
+  margin-bottom: 16px;
+}
+.field-label {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 7px;
+  padding: 0 1px;
+}
+.field-label__text {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text);
+}
+.field-label__hint {
+  font-size: 11px;
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+}
+.input,
+.textarea {
+  width: 100%;
+  background: var(--surface-2);
+  border: 1.5px solid var(--border-strong);
+  border-radius: var(--radius);
+  padding: 13px 14px;
+  font-size: 16px;
+  color: var(--text);
+  font-family: var(--font-mono);
+  transition:
+    border-color 0.15s var(--ease),
+    background-color 0.15s var(--ease),
+    box-shadow 0.15s var(--ease);
+}
+.input:focus,
+.textarea:focus {
+  border-color: var(--primary);
+  background: var(--surface);
+  box-shadow: inset 0 0 0 1.5px var(--primary);
+}
+.input::placeholder,
+.textarea::placeholder {
+  color: var(--text-faint);
+}
+.textarea {
+  resize: vertical;
+  min-height: 78px;
+  line-height: 1.5;
+  font-size: 15px;
+  font-family: var(--font);
+}
+.field.is-active .input,
+.field.is-active .textarea {
+  border-color: var(--primary);
+  background: var(--surface);
+  box-shadow: inset 0 0 0 1.5px var(--primary);
+}
+
+.toggle-group {
+  display: flex;
+  gap: 8px;
+}
+.toggle-btn {
+  flex: 1;
+  min-height: 52px;
+  border-radius: var(--radius);
+  border: 1.5px solid var(--border-strong);
+  background: var(--surface-2);
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--text-muted);
+  transition: all 0.15s var(--ease);
+  -webkit-tap-highlight-color: transparent;
+}
+.toggle-btn:active {
+  transform: scale(0.97);
+}
+.toggle-btn.is-yes.is-selected {
+  background: var(--success);
+  border-color: var(--success);
+  color: #fff;
+}
+.toggle-btn.is-no.is-selected {
+  background: var(--surface);
+  border-color: var(--text);
+  color: var(--text);
+}

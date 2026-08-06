@@ -1,0 +1,66 @@
+/* Design-Tokens: Farben, Radien, Schatten, Schriften. Hell/Dunkel wird rein
+   über CSS-Variablen gesteuert, damit der Rest des Stylesheets nichts vom
+   jeweiligen Farbschema wissen muss. */
+
+:root {
+  --bg: #f2f2f2;
+  --surface: #ffffff;
+  --surface-2: #ececec;
+  --surface-3: #e0e0e0;
+  --border: #d2d2d2;
+  --border-strong: #adadad;
+  --text: #2e2e2e;
+  --text-muted: #5c5c5c;
+  --text-faint: #8f8f8f;
+  --primary: #fcc010;
+  --primary-hover: #e2ab00;
+  --primary-soft: #fdf1cf;
+  --primary-contrast: #252525;
+  --success: #166534;
+  --success-soft: #dde9dd;
+  --danger: #b91c1c;
+  --danger-soft: #f3dcdc;
+  --danger-hover: #8c1515;
+  --warn: #b45309;
+  --warn-soft: #f5e4cf;
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-lg: 18px;
+  --shadow-sm: 0 1px 3px rgba(20, 20, 20, 0.07), 0 1px 2px rgba(20, 20, 20, 0.05);
+  --shadow: 0 6px 18px rgba(20, 20, 20, 0.1), 0 2px 5px rgba(20, 20, 20, 0.06);
+  --shadow-lg: 0 16px 40px rgba(20, 20, 20, 0.18), 0 4px 12px rgba(20, 20, 20, 0.08);
+  --font: "Segoe UI", Arial, Tahoma, -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  --font-mono: ui-monospace, "Cascadia Mono", "Segoe UI Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c1c1c;
+    --surface: #262626;
+    --surface-2: #2f2f2f;
+    --surface-3: #393939;
+    --border: #434343;
+    --border-strong: #5a5a5a;
+    --text: #f2f2f2;
+    --text-muted: #b0b0b0;
+    --text-faint: #7d7d7d;
+    --primary: #fcc010;
+    --primary-hover: #ffd23d;
+    --primary-soft: #3a2f0d;
+    --primary-contrast: #1c1c1c;
+    --success: #4ade80;
+    --success-soft: #132a1c;
+    --danger: #f47171;
+    --danger-soft: #391616;
+    --danger-hover: #ff9c9c;
+    --warn: #dcac4c;
+    --warn-soft: #332508;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.35), 0 1px 2px rgba(0, 0, 0, 0.25);
+    --shadow: 0 6px 18px rgba(0, 0, 0, 0.4), 0 2px 5px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.5), 0 4px 12px rgba(0, 0, 0, 0.35);
+    color-scheme: dark;
+  }
+}

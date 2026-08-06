@@ -1,0 +1,99 @@
+/* Das Grundgerüst für alle Dialoge (Bearbeiten, Löschen bestätigen,
+   Import-Vorschau und so weiter). */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 8, 0.55);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 80;
+  animation: overlayIn 0.18s var(--ease);
+  padding: 0;
+}
+@media (min-width: 600px) {
+  .modal-overlay {
+    align-items: center;
+    padding: 20px;
+  }
+}
+@keyframes overlayIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.modal {
+  background: var(--surface);
+  width: 100%;
+  max-width: 560px;
+  max-height: 92vh;
+  overflow-y: auto;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  padding: 22px 18px calc(env(safe-area-inset-bottom, 0px) + 20px);
+  box-shadow: var(--shadow-lg);
+  animation: modalIn 0.22s var(--ease-out);
+  border: 1.5px solid var(--border-strong);
+  border-bottom: none;
+}
+@media (min-width: 600px) {
+  .modal {
+    border-radius: var(--radius-lg);
+    border-bottom: 1.5px solid var(--border-strong);
+  }
+}
+@keyframes modalIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.modal__handle {
+  width: 36px;
+  height: 4px;
+  background: var(--border-strong);
+  margin: 0 auto 16px;
+}
+.modal__title {
+  font-size: 17px;
+  font-weight: 800;
+  margin-bottom: 4px;
+  letter-spacing: -0.005em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.modal__body {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin-bottom: 18px;
+}
+.modal__actions {
+  display: flex;
+  gap: 10px;
+}
+.modal__actions .btn {
+  flex: 1;
+}
+
+.copy-fallback {
+  background: var(--surface-2);
+  border: 1.5px solid var(--border-strong);
+  padding: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 180px;
+  overflow-y: auto;
+  margin-top: 12px;
+  color: var(--text-muted);
+}

@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "PowerShell(Start-Process \"c:\\\\Users\\\\philipp.baszak\\\\VS\\\\R�umecheck.html\")"
+      "PowerShell(Start-Process \"c:\\\\Users\\\\philipp.baszak\\\\VS\\\\R�umecheck.html\")",
+      "PowerShell(winget install --id OpenJS.NodeJS.LTS -e --source winget --accept-package-agreements --accept-source-agreements --silent)",
+      "PowerShell(node --version)",
+      "PowerShell(npm --version)",
+      "PowerShell(Start-Process \"http://localhost:5173/\")"
     ]
   }
 }

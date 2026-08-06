@@ -1,0 +1,60 @@
+/* Vollbild-Ansicht des Etagenplans. */
+
+.map-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  animation: overlayIn 0.18s var(--ease);
+}
+.map-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: none;
+  padding: calc(env(safe-area-inset-top, 0px) + 12px) 16px 12px;
+  border-bottom: 1.5px solid var(--border-strong);
+}
+.map-view {
+  flex: 1;
+  overflow: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-3);
+}
+.map-view img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  cursor: zoom-in;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.map-view img.is-zoomed {
+  max-width: none;
+  max-height: none;
+  width: 220%;
+  cursor: zoom-out;
+}
+.map-empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 30px;
+  text-align: center;
+  color: var(--text-muted);
+}
+.map-empty__icon {
+  opacity: 0.5;
+}
+.map-empty p {
+  font-size: 13.5px;
+  max-width: 280px;
+  line-height: 1.5;
+}

@@ -1,0 +1,70 @@
+/* Die kurzen Rückmeldungen unten am Bildschirmrand, zum Beispiel
+   "Tisch gespeichert". */
+
+#toast-host {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 18px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 100;
+  pointer-events: none;
+  padding: 0 16px;
+}
+.toast {
+  pointer-events: auto;
+  max-width: 480px;
+  width: 100%;
+  background: var(--text);
+  color: var(--bg);
+  border: 1.5px solid var(--text);
+  border-radius: var(--radius);
+  padding: 13px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: toastIn 0.22s var(--ease-out);
+  border-left-width: 4px;
+}
+.toast.is-warn {
+  border-left-color: var(--warn);
+}
+.toast.is-danger {
+  border-left-color: var(--danger);
+}
+@media (prefers-color-scheme: dark) {
+  .toast {
+    background: var(--surface-3);
+    color: var(--text);
+    border-color: var(--border-strong);
+  }
+}
+.toast.leaving {
+  animation: toastOut 0.18s var(--ease) forwards;
+}
+@keyframes toastIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes toastOut {
+  to {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+.toast__icon {
+  display: flex;
+  flex: none;
+}
