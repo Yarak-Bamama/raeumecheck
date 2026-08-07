@@ -1,7 +1,19 @@
 import { Icon } from "./icons/Icon";
+import { specialRoomName } from "../lib/specialRooms";
 
 export function RoomTile({ roomId, nickname, tableCount, isCopied, onClick }) {
   const shortId = roomId.split(".").pop();
+  const specialName = specialRoomName(roomId);
+
+  if (specialName) {
+    return (
+      <div className="room-tile room-tile--special">
+        <span className="room-tile__id">{shortId}</span>
+        <span className="room-tile__nick">{specialName}</span>
+        <span className="room-tile__count">kein Check nötig</span>
+      </div>
+    );
+  }
 
   return (
     <button

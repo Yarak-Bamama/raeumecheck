@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { FIELD_KEYS, FIELD_META } from "../lib/fields";
+import { describeDuplicates, findDuplicates } from "../lib/duplicates";
 import { roomLabel } from "../lib/floors";
 import { useAppState } from "../state/useAppState";
 import { WizardField } from "../components/WizardField";
@@ -114,6 +115,15 @@ export function WizardScreen({ goTo }) {
             field={field}
             value={session.draft[field.key]}
             isActive={field.key === session.activeField}
+            warning={
+              field.checkDuplicates
+                ? describeDuplicates(
+                    findDuplicates(state.rooms, field.key, session.draft[field.key], {
+                      roomId: session.roomId,
+                    }),
+                  )
+                : null
+            }
             registerRef={registerRef}
             onChangeValue={handleChangeValue}
             onFocusField={handleFocusField}

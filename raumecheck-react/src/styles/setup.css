@@ -48,19 +48,26 @@
   background: var(--primary-soft);
   box-shadow: inset 0 0 0 1.5px var(--primary);
 }
+.room-row__main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
 .room-row__id {
-  font-weight: 700;
-  font-size: 14px;
-  min-width: 76px;
+  font-weight: 800;
+  font-size: 19px;
   font-family: var(--font-mono);
 }
 .room-row__nick {
-  font-size: 13px;
+  font-size: 11.5px;
   color: var(--text-muted);
-  flex: 1;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  max-width: 100%;
 }
 .room-row__count {
   font-size: 11px;

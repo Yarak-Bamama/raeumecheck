@@ -84,6 +84,26 @@
   flex: 1;
 }
 
+.sheet-option-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 18px;
+}
+.sheet-option {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 12px;
+  border: 1.5px solid var(--border-strong);
+  border-radius: var(--radius);
+  font-size: 13.5px;
+  cursor: pointer;
+}
+.sheet-option input {
+  flex: none;
+}
+
 .copy-fallback {
   background: var(--surface-2);
   border: 1.5px solid var(--border-strong);

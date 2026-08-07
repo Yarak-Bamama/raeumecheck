@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { FLOORS, roomIdsForFloor } from "../lib/floors";
+import { isSpecialRoom } from "../lib/specialRooms";
 import { allTableEntries, knownAndExtraRoomIds } from "../state/selectors";
 import { useAppState } from "../state/useAppState";
 import { useToast } from "../components/toast/useToast";
@@ -10,9 +11,11 @@ import { tableToRowValues, rowsToTSV } from "../lib/tsv";
 import { copyToClipboard } from "../lib/clipboard";
 import { exportToXlsx } from "../lib/xlsxExport";
 import { readWorkbookFile } from "../lib/xlsxImport";
+import { ExcelLinkCard } from "../components/ExcelLinkCard";
 import { CopyFallbackModal } from "../modals/CopyFallbackModal";
 import { ImportPreviewModal } from "../modals/ImportPreviewModal";
 import { ResetConfirmModal } from "../modals/ResetConfirmModal";
+import { StartWalkthroughModal } from "../modals/StartWalkthroughModal";
 
 export function GlobalScreen({ goTo }) {
   const { state, dispatch } = useAppState();
@@ -22,6 +25,7 @@ export function GlobalScreen({ goTo }) {
   const [copyFallbackText, setCopyFallbackText] = useState(null);
   const [importPreview, setImportPreview] = useState(null);
   const [showResetModal, setShowResetModal] = useState(false);
+  const [startRoomId, setStartRoomId] = useState(null);
 
   const entries = allTableEntries(state.rooms);
   const total = entries.length;
@@ -29,7 +33,7 @@ export function GlobalScreen({ goTo }) {
   const noCount = total - yesCount;
   const percentDone = total ? Math.round((yesCount / total) * 100) : 0;
 
-  const knownRoomIds = knownAndExtraRoomIds(state.rooms);
+  const knownRoomIds = knownAndExtraRoomIds(state.rooms).filter((roomId) => !isSpecialRoom(roomId));
   const roomsWithData = knownRoomIds.filter((roomId) => (state.rooms[roomId]?.tables.length ?? 0) > 0).length;
   const floorRoomIds = roomIdsForFloor(state.currentFloor);
 
@@ -37,8 +41,14 @@ export function GlobalScreen({ goTo }) {
     if ((state.rooms[roomId]?.tables.length ?? 0) > 0) {
       goTo("roomOverview", { roomId });
     } else {
-      goTo("setup");
+      setStartRoomId(roomId);
     }
+  }
+
+  function startWalkthrough(plannedCount) {
+    dispatch({ type: "START_SESSION", roomId: startRoomId, plannedCount });
+    setStartRoomId(null);
+    goTo("wizard");
   }
 
   async function copyAllData() {
@@ -98,6 +108,8 @@ export function GlobalScreen({ goTo }) {
         {roomsWithData} von {knownRoomIds.length} Räumen (alle {FLOORS.length} Etagen) mit erfassten
         Daten.
       </p>
+
+      <ExcelLinkCard />
 
       <div className="stat-row">
         <div className="stat-tile">
@@ -187,6 +199,13 @@ export function GlobalScreen({ goTo }) {
       )}
       {showResetModal && (
         <ResetConfirmModal onConfirm={resetAll} onClose={() => setShowResetModal(false)} />
+      )}
+      {startRoomId && (
+        <StartWalkthroughModal
+          roomId={startRoomId}
+          onStart={startWalkthrough}
+          onClose={() => setStartRoomId(null)}
+        />
       )}
     </>
   );

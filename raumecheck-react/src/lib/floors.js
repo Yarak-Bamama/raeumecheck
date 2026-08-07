@@ -5,11 +5,22 @@
 
 export const FLOORS = ["M", "1", "2", "4"];
 
-const ROOMS_PER_FLOOR = 35;
+// Die Raumnummerierung fängt nicht auf jeder Etage wieder bei 1 an, Etage 1
+// zum Beispiel geht von 34 bis 51 weiter. Deshalb hier pro Etage der genaue
+// Nummernbereich, mit 1 bis 35 als Standard für Etagen, die noch nicht
+// einzeln eingetragen wurden.
+const DEFAULT_ROOM_RANGE = { start: 1, end: 35 };
+
+const ROOM_RANGE_BY_FLOOR = {
+  1: { start: 34, end: 51 },
+  2: { start: 37, end: 58 },
+  4: { start: 13, end: 20 }
+};
 
 export function roomIdsForFloor(floor) {
+  const { start, end } = ROOM_RANGE_BY_FLOOR[floor] ?? DEFAULT_ROOM_RANGE;
   const ids = [];
-  for (let i = 1; i <= ROOMS_PER_FLOOR; i++) {
+  for (let i = start; i <= end; i++) {
     ids.push(`E16.${floor}.${i}`);
   }
   return ids;
@@ -28,4 +39,5 @@ export function floorOfRoomId(roomId) {
 export function roomLabel(roomId, nicknames) {
   const nick = nicknames[roomId];
   return nick ? `${roomId} – ${nick}` : roomId;
+
 }

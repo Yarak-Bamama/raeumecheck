@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import { FIELD_KEYS, FIELD_META } from "../lib/fields";
+import { describeDuplicates, findDuplicates } from "../lib/duplicates";
 import { Modal } from "../components/Modal";
 import { WizardField } from "../components/WizardField";
 import { Icon } from "../components/icons/Icon";
@@ -8,7 +9,7 @@ import { Icon } from "../components/icons/Icon";
 // bestehenden Tisch, den man nachträglich korrigieren will. Der Entwurf lebt
 // hier rein lokal in der Komponente, erst ein Klick auf Speichern schreibt
 // die Änderungen in den globalen State.
-export function EditTableModal({ table, onSave, onClose }) {
+export function EditTableModal({ table, roomId, rooms, onSave, onClose }) {
   const [draft, setDraft] = useState(table);
   const fieldRefs = useRef({});
 
@@ -48,6 +49,13 @@ export function EditTableModal({ table, onSave, onClose }) {
             field={field}
             value={draft[field.key]}
             isActive={false}
+            warning={
+              field.checkDuplicates
+                ? describeDuplicates(
+                    findDuplicates(rooms, field.key, draft[field.key], { roomId, tableId: draft.id }),
+                  )
+                : null
+            }
             registerRef={registerRef}
             onChangeValue={handleChangeValue}
             onFocusField={() => {}}

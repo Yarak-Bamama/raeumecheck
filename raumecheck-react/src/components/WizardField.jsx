@@ -5,7 +5,16 @@ import { Icon } from "./icons/Icon";
 // Feld, damit die aufrufende Komponente per Tastatur gezielt zum nächsten
 // oder vorherigen Feld springen kann, so wie es "Enter springt weiter"
 // verlangt.
-export function WizardField({ field, value, isActive, registerRef, onChangeValue, onFocusField, onAdvance }) {
+export function WizardField({
+  field,
+  value,
+  isActive,
+  warning,
+  registerRef,
+  onChangeValue,
+  onFocusField,
+  onAdvance,
+}) {
   const label = (
     <div className="field-label">
       <span className="field-label__text">{field.label}</span>
@@ -100,6 +109,11 @@ export function WizardField({ field, value, isActive, registerRef, onChangeValue
     <div className={`field${isActive ? " is-active" : ""}`} data-fieldwrap={field.key}>
       {label}
       {body}
+      {warning && (
+        <div className="field-warning">
+          <Icon name="alert" /> {warning}
+        </div>
+      )}
     </div>
   );
 }

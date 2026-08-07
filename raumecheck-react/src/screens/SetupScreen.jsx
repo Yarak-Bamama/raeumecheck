@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { roomIdsForFloor } from "../lib/floors";
+import { isSpecialRoom } from "../lib/specialRooms";
 import { useAppState } from "../state/useAppState";
 import { useToast } from "../components/toast/useToast";
 import { RubiconLogo } from "../components/RubiconLogo";
@@ -18,12 +19,14 @@ export function SetupScreen({ goTo }) {
   const [searchTerm, setSearchTerm] = useState("");
   const [count, setCount] = useState(5);
 
-  const roomsOnFloor = roomIdsForFloor(state.currentFloor).filter((roomId) => {
-    if (!searchTerm) return true;
-    const term = searchTerm.toLowerCase();
-    const nickname = state.nicknames[roomId] ?? "";
-    return roomId.toLowerCase().includes(term) || nickname.toLowerCase().includes(term);
-  });
+  const roomsOnFloor = roomIdsForFloor(state.currentFloor)
+    .filter((roomId) => !isSpecialRoom(roomId))
+    .filter((roomId) => {
+      if (!searchTerm) return true;
+      const term = searchTerm.toLowerCase();
+      const nickname = state.nicknames[roomId] ?? "";
+      return roomId.toLowerCase().includes(term) || nickname.toLowerCase().includes(term);
+    });
 
   function handleFloorChange() {
     setSelectedRoomId(null);
@@ -61,7 +64,7 @@ export function SetupScreen({ goTo }) {
         </span>
         <input
           className="input"
-          placeholder="Raum suchen … z. B. 7 oder Küche"
+          placeholder="Raum suchen … z. B. 7 oder Zusatzname"
           autoComplete="off"
           spellCheck="false"
           value={searchTerm}

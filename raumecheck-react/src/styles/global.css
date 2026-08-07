@@ -1,5 +1,32 @@
-/* Statistik-Kacheln, Fortschrittsbalken und das Raum-Raster der
-   Gesamtübersicht. */
+/* Statistik-Kacheln, Fortschrittsbalken, das Raum-Raster und die
+   Excel-Verknüpfung der Gesamtübersicht. */
+
+.excel-link-card__row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+.excel-link-card__title {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0 0 3px;
+}
+.excel-link-card__text {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+.excel-link-card--warn {
+  border-color: var(--warn);
+  background: var(--warn-soft);
+}
+.excel-link-card--warn .excel-link-card__text {
+  color: var(--text);
+}
+.excel-link-card--ok {
+  border-color: var(--primary);
+}
 
 .stat-row {
   display: grid;
@@ -101,6 +128,14 @@
   font-family: var(--font-mono);
 }
 .room-tile.has-data .room-tile__count {
+  color: var(--text);
+}
+.room-tile--special {
+  cursor: default;
+  border-style: dashed;
+  opacity: 0.65;
+}
+.room-tile--special .room-tile__nick {
   color: var(--text);
 }
 .room-tile__copied {

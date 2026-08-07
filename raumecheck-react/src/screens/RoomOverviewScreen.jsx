@@ -91,7 +91,13 @@ export function RoomOverviewScreen({ roomId, goTo }) {
       </div>
 
       {editingTable && (
-        <EditTableModal table={editingTable} onSave={saveEdit} onClose={() => setEditingTable(null)} />
+        <EditTableModal
+          table={editingTable}
+          roomId={roomId}
+          rooms={state.rooms}
+          onSave={saveEdit}
+          onClose={() => setEditingTable(null)}
+        />
       )}
       {deletingTable && (
         <ConfirmDeleteModal

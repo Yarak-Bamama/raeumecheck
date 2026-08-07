@@ -27,8 +27,6 @@ export function RoomRow({ roomId, nickname, tableCount, isSelected, onSelect, on
       className={`room-row${isSelected ? " is-selected" : ""}`}
       onClick={onSelect}
     >
-      <span className="room-row__id">{roomId}</span>
-
       {isEditingNickname ? (
         <input
           ref={inputRef}
@@ -49,8 +47,9 @@ export function RoomRow({ roomId, nickname, tableCount, isSelected, onSelect, on
           }}
         />
       ) : (
-        <span className="room-row__nick">
-          {nickname || <span style={{ color: "var(--text-faint)" }}>kein Zusatzname</span>}
+        <span className="room-row__main">
+          <span className="room-row__id">{roomId}</span>
+          {nickname && <span className="room-row__nick">{nickname}</span>}
         </span>
       )}
 

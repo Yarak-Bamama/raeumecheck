@@ -229,6 +229,18 @@ main {
   font-size: 15px;
   font-family: var(--font);
 }
+.field-warning {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 7px;
+  padding: 7px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--warn);
+  background: var(--warn-soft);
+  border-radius: var(--radius);
+}
 .field.is-active .input,
 .field.is-active .textarea {
   border-color: var(--primary);
